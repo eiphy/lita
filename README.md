@@ -1,4 +1,4 @@
 # Lita
-This aims to develop an agile robot which has the movement intuition similar to animals, and is definitely a long-term project.
+This project aims to develop intuition for a robot-lita. 
 
-The first step of this project is to build a relative convincing simulation environment, currently it should be built in gazebo, and attempt to build a model-free controller using DRL to do the locomotion of the robot.
+The intellegnet part may be involved, but is not the main focus of this project.
