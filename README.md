@@ -1,4 +1,8 @@
 # Lita
-This aims to develop an agile robot which has the movement intuition similar to animals, and is definitely a long-term project.
+This project focus on build the basic interpolator of Lita, the acceleartion ability, kinematic mapping ability.
 
-The first step of this project is to build a relative convincing simulation environment, currently it should be built in gazebo, and attempt to build a model-free controller using DRL to do the locomotion of the robot.
+2/11:
+1. General logics for calculator finished.
+2. Basic functional component set up.
+
+memo01: It is quite important to seperate the functional component and logic component. Thus, the modulour programming.
