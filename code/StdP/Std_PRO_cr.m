@@ -4,7 +4,7 @@ function [d_cr,v_cr,a_cr,t_cr] = Std_PRO_cr(comm, v0, a0)
 %Instead of using the jerk value determined in the velocity shortage
 %judement, the jerk is independently judged in this function to deal with
 %general case and the later displacement determination.
-%% Preprocess
+%% Initialization
 d_cr = zeors(8,1);
 v_cr = zeros(8,1);
 a_cr = zeros(8,1);
@@ -37,17 +37,17 @@ end
 % Phase(CC).
 % AA step
 if comm(1) >= 0
-    j_max = -comm(4);
+    j_max = -comm(end);
 else
-    j_max = comm(4);
+    j_max = comm(end);
 end
-[d_cr(6), v_cr(6), t_cr(6), a_cr(6)] = Std_AA_cr(d, comm(2), 0, -comm(3), j_max);
+[d_cr(6), v_cr(6), t_cr(6), a_cr(6)] = Std_AA_cr(d, comm(2), 0, -comm(end-1), j_max);
 
 % CA step
-[d_cr(7), v_cr(7), t_cr(7), a_cr(7)] = Std_CA_cr(d_cr(6), 0, v_cr(6), -comm(3), -j_max);
+[d_cr(7), v_cr(7), t_cr(7), a_cr(7)] = Std_CA_cr(d_cr(6), 0, v_cr(6), -comm(end-1), -j_max);
 
 % DA step
-[d_cr(8), v_cr(8), t_cr(8), a_cr(8)] = Std_CA_cr(d_cr(7), 0, v_cr(7), -comm(3), -j_max);
+[d_cr(8), v_cr(8), t_cr(8), a_cr(8)] = Std_CA_cr(d_cr(7), 0, v_cr(7), -comm(end-1), -j_max);
 
 %% CC phase and modify the deceleration phase
 t_cr(5) = Std_CC_cr(d_cr(4), comm(1)-d_cr(8), comm(2));
