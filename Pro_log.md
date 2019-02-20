@@ -1,5 +1,4 @@
 # Lita
-This project focus on build the basic interpolator of Lita, the acceleartion ability, kinematic mapping ability.
 
 20/2:
 Finished the Accelerator.
