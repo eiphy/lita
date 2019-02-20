@@ -1,6 +1,9 @@
 # Lita
 This project focus on build the basic interpolator of Lita, the acceleartion ability, kinematic mapping ability.
 
+20/2:
+Finished the Accelerator.
+
 15/2: 
 1. Finish the velocity shortage.
 2. Debug standard process.

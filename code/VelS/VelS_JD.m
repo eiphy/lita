@@ -1,6 +1,6 @@
 function [jAC,jDC] = VelS_JD(comm,a0)
 % This function is used to determine the jerk in velocity shortage
-% determination.
+% determination. Not currently used.
 jAC = zeros(2,1);
 jDC = zeros(2,1);
 

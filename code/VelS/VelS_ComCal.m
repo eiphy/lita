@@ -1,10 +1,18 @@
-function comm_velmod = VelS_ComCal(f_cr,comm,jerk_AC,jerk_CD)
-%% Shortage flag
+function comm_velmod = VelS_ComCal(comm,pre_cr)
+% This function is used to modify the motion command based on the judgement
+% of velocity shortage.
+%% Shortage flag & initialization
 flag = 0;
+j = comm(4);
+%% Calculate the critical feedrate
+f_cr = zeros(1,2);
+f_cr(1) = pre_cr(2) + (comm(3)^2-pre_cr(3)^2)/(2*comm(4)) - (comm(3)^2)/(2*(-comm(4)));
+f_cr(2) = (comm(3)^2)/(2*comm(4)) - (comm(3)^2)/(2*(-comm(4)));
+
 %% The acceleration phase
-if abs(comm(1)) < abs(f_cr(1))
+if comm(1)*f_cr(1)>=0 && abs(comm(1))<abs(f_cr(1))
     flag = 1;
-    a_posm = (2*jerk_AC(1)*jerk_CD(1)*(comm(2) - v) + jerk_CD(1)*a^2) / (jerk_CD(1) - jerk_AC(1));
+    a_posm = (-2*j*j*(comm(2)-pre_cr(2)) - j*pre_cr(3)^2) / (-j - j);
     a_posm = sqrt(a_posm);
     if comm(3) < 0
         a_posm = -a_posm;
@@ -12,9 +20,9 @@ if abs(comm(1)) < abs(f_cr(1))
 end
 
 %% The deceleration phase
-if abs(comm(1)) < abs(f_cr(2))
+if comm(1)*f_cr(1)>=0 && abs(comm(1)) < abs(f_cr(2))
     flag = 1;
-    a_negm = (2*jerk_AC(2)*jerk_CD(2)*comm(2)) / (jerk_AC(2) - jerk_CD(2));
+    a_negm = (-2*j*j*comm(2)) / (-j - j);
     a_negm = sqrt(a_negm);
     if comm(3) < 0
         a_negm = -a_negm;
