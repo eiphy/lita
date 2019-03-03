@@ -1,11 +1,11 @@
-function [d_cr,v_cr,a_cr,t_cr] = Std_PRO_cr(comm, v0, a0)
+function [d_cr,v_cr,a_cr,t_cr] = Std_PRO_cr(comm, pre_cr)
 %This function is used to calculate the critical value of standard
 %acceleration process. The initial displacement is assumed to be zero.
 %Instead of using the jerk value determined in the velocity shortage
 %judement, the jerk is independently judged in this function to deal with
 %general case and the later displacement determination.
 %% Initialization
-d_cr = zeors(1,8);
+d_cr = zeros(1,8);
 v_cr = zeros(1,8);
 a_cr = zeros(1,8);
 t_cr = zeros(1,8);
@@ -39,7 +39,7 @@ t_cr(1) = pre_cr(4);
 
 %% CC phase and modify the deceleration phase
 t_cr(5) = Std_CC_cr(d_cr(4), comm(1)-d_cr(8), comm(2));
-d_cr(5) = comm(1) - dcr(8);
+d_cr(5) = comm(1) - d_cr(8);
 v_cr(5) = comm(2);
 a_cr(5) = 0;
 

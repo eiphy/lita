@@ -1,4 +1,4 @@
-function [d,v,a,t] = DisS_AAModiCal(comm,pre_cr,t)
+function [d,v,a,t] = DisS_AAModiCal(comm,pre_cr,t_)
 % This function use the golden radio method to get a desirable feedrate.
 %% Initialize.
 if comm(1) < 0              % Take care of the direction.
@@ -12,8 +12,8 @@ vu = comm(2);
 v1 = vl + R*(vu-vl);
 v2 = vu - R*(vu-vl);
 [d1,d2] = DisS_AAModiCompCal(comm,pre_cr,v1,v2);
-%% Interation
-while abs(v2-v1) > t
+%% Iteration
+while abs(v2-v1) > t_
     if d1<comm(1) && d2<comm(1) || d1<comm(1) && d2>comm(2)
         vl = v2;
         v2 = v1;

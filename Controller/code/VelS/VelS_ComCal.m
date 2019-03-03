@@ -4,12 +4,19 @@ function comm_velmod = VelS_ComCal(comm,pre_cr)
 %% Shortage flag & initialization
 flag = 0;
 j = comm(4);
+
+% Maximum acceleration of acceleration and deceleration phase.
+a_posm = 0;
+a_negm = 0;
 %% Calculate the critical feedrate
 f_cr = zeros(1,2);
 f_cr(1) = pre_cr(2) + (comm(3)^2-pre_cr(3)^2)/(2*comm(4)) - (comm(3)^2)/(2*(-comm(4)));
 f_cr(2) = (comm(3)^2)/(2*comm(4)) - (comm(3)^2)/(2*(-comm(4)));
 
 %% The acceleration phase
+% The condition to modify the maximum acceleration: The command feedrate
+% and critical feedrate are in the same direction & critical is 'smaller'
+% than command.
 if comm(1)*f_cr(1)>=0 && abs(comm(1))<abs(f_cr(1))
     flag = 1;
     a_posm = (-2*j*j*(comm(2)-pre_cr(2)) - j*pre_cr(3)^2) / (-j - j);

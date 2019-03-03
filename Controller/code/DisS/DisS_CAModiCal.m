@@ -5,6 +5,7 @@ dd = comm(1) - d_cr(8);
 b = 2*comm(3)*t_cr(4);
 c = comm(3)*dd - 2*comm(3)*v_cr(3)*t_cr(4)+v_cr(3)^2;
 delta = b^2-4*c;
+v_n = zeros(1,2);
 v_n(1) = 0.5 * (-b + sqrt(delta));
 v_n(2) = 0.5 * (-b - sqrt(delta));
 
