@@ -5,6 +5,8 @@ This project aims to develop intuition for a robot-lita.
 The intellegnet topics may be involved, but is not the main focus of this project.
 
 <<<<<<< basic_interpolator_build
+3/3:
+Debug.
 
 20/2:
 Finished the Accelerator.
