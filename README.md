@@ -5,6 +5,13 @@ This project aims to develop intuition for a robot-lita.
 The intellegnet topics may be involved, but is not the main focus of this project.
 
 <<<<<<< basic_interpolator_build
+3.25:
+Supervisor is so ... Back to this project.
+1. Finish the profile generator.
+2. MATLAB is updated to 2019a, some systmatic files may be changed.
+
+Move on to do the commands generate & the test app.
+
 3/3:
 Debug.
 
