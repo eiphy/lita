@@ -36,4 +36,10 @@ for i = 1:size(pattern,1)
     
     plotTime = [plotTime, t + tplot];
     t = plotTime(end);
+    
+    % for testing purpose
+    for j = 1:4
+        subplot(2,2,j)
+        plot(plotTime, plotData{j})
+    end
 end
