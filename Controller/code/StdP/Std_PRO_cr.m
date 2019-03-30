@@ -16,13 +16,17 @@ t_cr(1) = pre_cr(4);
 
 %% Acceleration phase
 % AA step
-[d_cr(2), v_cr(2), t_cr(2), a_cr(2)] = Std_AA_cr(d_cr(1), v_cr(1), a_cr(1), comm(3), comm(end));
+if abs(pre_cr(3)) > abs(comm(3))
+    [d_cr(2), v_cr(2), t_cr(2), a_cr(2)] = Std_AA_cr(d_cr(1), v_cr(1), a_cr(1), -comm(3), comm(end));
+else
+    [d_cr(2), v_cr(2), t_cr(2), a_cr(2)] = Std_AA_cr(d_cr(1), v_cr(1), a_cr(1), comm(3), comm(end));
+end
 
 % CA step
 [d_cr(3), v_cr(3), t_cr(3), a_cr(3)] = Std_CA_cr(d_cr(2), comm(2), v_cr(2), comm(3), -comm(end));
 
 % DA step
-[d_cr(4), v_cr(4), t_cr(4), a_cr(4)] = Std_CA_cr(d_cr(3), comm(2), v_cr(3), comm(3), -comm(end));
+[d_cr(4), v_cr(4), t_cr(4), a_cr(4)] = Std_DA_cr(d_cr(3), comm(2), v_cr(3), comm(3), -comm(end));
 
 %% Deceleration phase
 % The decceleration phase is calculated to get the critical displacement
@@ -35,7 +39,7 @@ t_cr(1) = pre_cr(4);
 [d_cr(7), v_cr(7), t_cr(7), a_cr(7)] = Std_CA_cr(d_cr(6), 0, v_cr(6), -comm(end-1), comm(end));
 
 % DA step
-[d_cr(8), v_cr(8), t_cr(8), a_cr(8)] = Std_CA_cr(d_cr(7), 0, v_cr(7), -comm(end-1), comm(end));
+[d_cr(8), v_cr(8), t_cr(8), a_cr(8)] = Std_DA_cr(d_cr(7), 0, v_cr(7), -comm(end-1), comm(end));
 
 %% CC phase and modify the deceleration phase
 t_cr(5) = Std_CC_cr(d_cr(4), comm(1)-d_cr(8), comm(2));
