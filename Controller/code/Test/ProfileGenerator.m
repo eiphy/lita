@@ -49,7 +49,7 @@ for i = 1:size(pattern,1)
 %         plotData{4} = [plotData{4}, ones(1,length(tplot)) * pattern(i,1)];
 %     end
     
-    t = plotTime(end);
+    t = t + tplot(end);
     
     % for testing purpose
 %     for j = 1:4

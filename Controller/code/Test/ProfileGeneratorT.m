@@ -1,4 +1,4 @@
-function [pd,pv,pa,pj] = ProfileGeneratorT(pattern,d0,v0,a0,t)
+function [pd,pv,pa,pj,dcom] = ProfileGeneratorT(pattern,d0,v0,a0,t)
 % This function is used to generate profiles of d,v,a and j.
 %%  Initialization
 accum = zeros(1,3);
@@ -24,6 +24,11 @@ for i = 1:size(pattern,1)
     qv(i,end) = accum(2);
     qd(i,:) = polyint(qv(i,:));
     qd(i,end) = accum(1);
+    
+    % update the acumulated value
+    accum(3) = polyval(qa(i,:), pattern(i,2));
+    accum(2) = polyval(qv(i,:), pattern(i,2));
+    accum(1) = polyval(qd(i,:), pattern(i,2));
     
     tcc = tcc + pattern(i,2);
     if t < tcc
