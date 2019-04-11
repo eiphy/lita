@@ -17,7 +17,7 @@ f_cr(2) = (comm(3)^2)/(2*comm(4)) - (comm(3)^2)/(2*(-comm(4)));
 % The condition to modify the maximum acceleration: The command feedrate
 % and critical feedrate are in the same direction & critical is 'smaller'
 % than command.
-if comm(1)*f_cr(1)>=0 && abs(comm(1))<abs(f_cr(1))
+if comm(2)*f_cr(1)>=0 && abs(comm(2))>abs(f_cr(1))
     flag = 1;
     a_posm = (-2*j*j*(comm(2)-pre_cr(2)) - j*pre_cr(3)^2) / (-j - j);
     a_posm = sqrt(a_posm);
@@ -27,7 +27,7 @@ if comm(1)*f_cr(1)>=0 && abs(comm(1))<abs(f_cr(1))
 end
 
 %% The deceleration phase
-if comm(1)*f_cr(1)>=0 && abs(comm(1)) < abs(f_cr(2))
+if comm(2)*f_cr(2)>=0 && abs(comm(2))>abs(f_cr(2))
     flag = 1;
     a_negm = (-2*j*j*comm(2)) / (-j - j);
     a_negm = sqrt(a_negm);
