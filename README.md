@@ -5,6 +5,10 @@ This project aims to develop intuition for a robot-lita.
 The intellegnet topics may be involved, but is not the main focus of this project.
 
 <<<<<<< basic_interpolator_build
+3.30:
+1. Finish dectetor;
+2. Start debug.
+
 3.25:
 Supervisor is so ... Back to this project.
 1. Finish the profile generator.
