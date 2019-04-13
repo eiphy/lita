@@ -43,7 +43,11 @@ end
 
 %% CC phase and modify the deceleration phase
 t_cr(5) = Std_CC_cr(d_cr(4), comm(1)-d_cr(8), comm(2));
-d_cr(5) = comm(1) - d_cr(8);
+if t_cr(5) == inf
+    d_cr(5) = d_cr(4);
+else
+    d_cr(5) = comm(1) - d_cr(8);
+end
 v_cr(5) = comm(2);
 a_cr(5) = 0;
 
