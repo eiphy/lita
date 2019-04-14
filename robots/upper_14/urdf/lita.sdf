@@ -1,0 +1,775 @@
+<sdf version='1.6'>
+  <model name='lita_converted'>
+    <link name='upper_body_link'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-4e-06 -0 0.15913 0 -0 0</pose>
+        <mass>26.766</mass>
+        <inertia>
+          <ixx>10</ixx>
+          <ixy>10</ixy>
+          <ixz>10</ixz>
+          <iyy>10</iyy>
+          <iyz>10</iyz>
+          <izz>10</izz>
+        </inertia>
+      </inertial>
+      <collision name='upper_body_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lita_converted/meshes/upper_body_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='upper_body_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lita_converted/meshes/upper_body_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='fixed' type='fixed'>
+      <child>upper_body_link</child>
+      <parent>world</parent>
+    </joint>
+    <link name='l_shoulder_roll_link'>
+      <pose frame=''>0.125 0 0.26 3.14159 -1.57079 3.14159</pose>
+      <inertial>
+        <pose frame=''>0.003368 -0 -0.015946 0 -0 0</pose>
+        <mass>0.63417</mass>
+        <inertia>
+          <ixx>0.000315</ixx>
+          <ixy>0</ixy>
+          <ixz>-5.2e-05</ixz>
+          <iyy>0.000373</iyy>
+          <iyz>0</iyz>
+          <izz>0.000525</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_shoulder_roll_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lita_converted/meshes/l_shoulder_roll_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='l_shoulder_roll_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lita_converted/meshes/l_shoulder_roll_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='l_shoulder_roll' type='revolute'>
+      <child>l_shoulder_roll_link</child>
+      <parent>upper_body_link</parent>
+      <axis>
+        <xyz>1 0 4e-06</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0.1</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='l_shoulder_pitch_link'>
+      <pose frame=''>0.177049 0 0.256287 1.5708 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.003299 0 -0.000981 0 -0 0</pose>
+        <mass>1.0724</mass>
+        <inertia>
+          <ixx>0.000841</ixx>
+          <ixy>0</ixy>
+          <ixz>-5.4e-05</ixz>
+          <iyy>0.000973</iyy>
+          <iyz>0</iyz>
+          <izz>0.000606</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_shoulder_pitch_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lita_converted/meshes/l_shoulder_pitch_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='l_shoulder_pitch_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lita_converted/meshes/l_shoulder_pitch_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='l_shoulder_pitch' type='revolute'>
+      <child>l_shoulder_pitch_link</child>
+      <parent>l_shoulder_roll_link</parent>
+      <axis>
+        <xyz>0 1 4e-06</xyz>
+        <limit>
+          <lower>-0.6981</lower>
+          <upper>1.7104</upper>
+          <effort>50000</effort>
+          <velocity>500</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+          <friction>0.1</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='l_shoulder_yaw_link'>
+      <pose frame=''>0.232049 0 0.256287 -3.14159 0 -0</pose>
+      <inertial>
+        <pose frame=''>0.065121 -0.002097 0 0 -0 0</pose>
+        <mass>1.3826</mass>
+        <inertia>
+          <ixx>0.000398</ixx>
+          <ixy>-0.000132</ixy>
+          <ixz>0</ixz>
+          <iyy>0.005026</iyy>
+          <iyz>0</iyz>
+          <izz>0.005143</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_shoulder_yaw_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lita_converted/meshes/l_shoulder_yaw_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='l_shoulder_yaw_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lita_converted/meshes/l_shoulder_yaw_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='l_shoulder_yaw' type='revolute'>
+      <child>l_shoulder_yaw_link</child>
+      <parent>l_shoulder_pitch_link</parent>
+      <axis>
+        <xyz>-0 7e-06 -1</xyz>
+        <limit>
+          <lower>-0.1396</lower>
+          <upper>1.6231</upper>
+          <effort>50000</effort>
+          <velocity>500</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+          <friction>0.1</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='l_elbow_link'>
+      <pose frame=''>0.422349 -0 0.256287 -3.14159 -0 -0</pose>
+      <inertial>
+        <pose frame=''>0.088184 -0.00035 -0 0 -0 0</pose>
+        <mass>0.81599</mass>
+        <inertia>
+          <ixx>0.000143</ixx>
+          <ixy>1.5e-05</ixy>
+          <ixz>0</ixz>
+          <iyy>0.004114</iyy>
+          <iyz>0</iyz>
+          <izz>0.004046</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_elbow_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lita_converted/meshes/l_elbow_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='l_elbow_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lita_converted/meshes/l_elbow_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='l_elbow' type='revolute'>
+      <child>l_elbow_link</child>
+      <parent>l_shoulder_yaw_link</parent>
+      <axis>
+        <xyz>0 7e-06 -1</xyz>
+        <limit>
+          <lower>-0.7853</lower>
+          <upper>2.4085</upper>
+          <effort>50000</effort>
+          <velocity>500</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+          <friction>0.1</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='l_wrist_roll_link'>
+      <pose frame=''>0.632349 -0 0.256287 2.03445 -1.57079 -2.03444</pose>
+      <inertial>
+        <pose frame=''>-0 0 -0.004271 0 -0 0</pose>
+        <mass>0.033212</mass>
+        <inertia>
+          <ixx>3e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>6e-06</iyy>
+          <iyz>0</iyz>
+          <izz>8e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_wrist_roll_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lita_converted/meshes/l_wrist_roll_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='l_wrist_roll_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lita_converted/meshes/l_wrist_roll_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='l_wrist_roll' type='revolute'>
+      <child>l_wrist_roll_link</child>
+      <parent>l_elbow_link</parent>
+      <axis>
+        <xyz>1 7e-06 4e-06</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+          <friction>0.1</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='l_wrist_pitch_link'>
+      <pose frame=''>0.652349 0 0.256287 1.57081 -0 7e-06</pose>
+      <inertial>
+        <pose frame=''>0.000979 -0 -0 0 -0 0</pose>
+        <mass>0.13385</mass>
+        <inertia>
+          <ixx>2.1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.2e-05</iyy>
+          <iyz>0</iyz>
+          <izz>2.2e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_wrist_pitch_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lita_converted/meshes/l_wrist_pitch_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='l_wrist_pitch_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lita_converted/meshes/l_wrist_pitch_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='l_wrist_pitch' type='revolute'>
+      <child>l_wrist_pitch_link</child>
+      <parent>l_wrist_roll_link</parent>
+      <axis>
+        <xyz>-7e-06 1 1.1e-05</xyz>
+        <limit>
+          <lower>-0.6981</lower>
+          <upper>0.6981</upper>
+          <effort>50000</effort>
+          <velocity>500</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+          <friction>0.1</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='l_wrist_yaw_link'>
+      <pose frame=''>0.680349 0 0.256287 -3.14158 -0 7e-06</pose>
+      <inertial>
+        <pose frame=''>0.009683 -0.000791 0 0 -0 0</pose>
+        <mass>0.089949</mass>
+        <inertia>
+          <ixx>8e-06</ixx>
+          <ixy>-1e-06</ixy>
+          <ixz>0</ixz>
+          <iyy>2e-05</iyy>
+          <iyz>0</iyz>
+          <izz>2.2e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_wrist_yaw_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lita_converted/meshes/l_wrist_yaw_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='l_wrist_yaw_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lita_converted/meshes/l_wrist_yaw_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='l_wrist_yaw' type='revolute'>
+      <child>l_wrist_yaw_link</child>
+      <parent>l_wrist_pitch_link</parent>
+      <axis>
+        <xyz>-0 1.5e-05 -1</xyz>
+        <limit>
+          <lower>-0.3141</lower>
+          <upper>0.3141</upper>
+          <effort>50000</effort>
+          <velocity>500</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+          <friction>0.1</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='r_shoulder_roll_link'>
+      <pose frame=''>-0.125 0 0.26 3.14159 -1.57079 3.14159</pose>
+      <inertial>
+        <pose frame=''>0.003368 0 0.015946 0 -0 0</pose>
+        <mass>0.63417</mass>
+        <inertia>
+          <ixx>0.000315</ixx>
+          <ixy>0</ixy>
+          <ixz>5.2e-05</ixz>
+          <iyy>0.000373</iyy>
+          <iyz>0</iyz>
+          <izz>0.000525</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_shoulder_roll_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lita_converted/meshes/r_shoulder_roll_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='r_shoulder_roll_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lita_converted/meshes/r_shoulder_roll_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='r_shoulder_roll' type='revolute'>
+      <child>r_shoulder_roll_link</child>
+      <parent>upper_body_link</parent>
+      <axis>
+        <xyz>1 0 4e-06</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+          <friction>0.1</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='r_shoulder_pitch_link'>
+      <pose frame=''>-0.177049 0 0.256287 1.57079 7e-06 3.14159</pose>
+      <inertial>
+        <pose frame=''>0.003299 -0 0.000981 0 -0 0</pose>
+        <mass>1.0724</mass>
+        <inertia>
+          <ixx>0.000841</ixx>
+          <ixy>0</ixy>
+          <ixz>5.4e-05</ixz>
+          <iyy>0.000973</iyy>
+          <iyz>0</iyz>
+          <izz>0.000606</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_shoulder_pitch_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lita_converted/meshes/r_shoulder_pitch_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='r_shoulder_pitch_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lita_converted/meshes/r_shoulder_pitch_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='r_shoulder_pitch' type='revolute'>
+      <child>r_shoulder_pitch_link</child>
+      <parent>r_shoulder_roll_link</parent>
+      <axis>
+        <xyz>0 -1 -4e-06</xyz>
+        <limit>
+          <lower>-0.6981</lower>
+          <upper>1.7104</upper>
+          <effort>50000</effort>
+          <velocity>500</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+          <friction>0.1</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='r_shoulder_yaw_link'>
+      <pose frame=''>-0.232049 0 0.256286 -7e-06 7e-06 -3.14159</pose>
+      <inertial>
+        <pose frame=''>0.065121 -0.002097 0 0 -0 0</pose>
+        <mass>1.3826</mass>
+        <inertia>
+          <ixx>0.000398</ixx>
+          <ixy>-0.000132</ixy>
+          <ixz>0</ixz>
+          <iyy>0.005026</iyy>
+          <iyz>0</iyz>
+          <izz>0.005143</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_shoulder_yaw_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lita_converted/meshes/r_shoulder_yaw_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='r_shoulder_yaw_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lita_converted/meshes/r_shoulder_yaw_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='r_shoulder_yaw' type='revolute'>
+      <child>r_shoulder_yaw_link</child>
+      <parent>r_shoulder_pitch_link</parent>
+      <axis>
+        <xyz>-7e-06 -7e-06 1</xyz>
+        <limit>
+          <lower>-0.1396</lower>
+          <upper>1.6231</upper>
+          <effort>50000</effort>
+          <velocity>500</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+          <friction>0.1</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='r_elbow_link'>
+      <pose frame=''>-0.422349 -0 0.256285 -7e-06 7e-06 -3.14159</pose>
+      <inertial>
+        <pose frame=''>0.088184 -0.00035 -0 0 -0 0</pose>
+        <mass>0.81599</mass>
+        <inertia>
+          <ixx>0.000143</ixx>
+          <ixy>1.5e-05</ixy>
+          <ixz>0</ixz>
+          <iyy>0.004114</iyy>
+          <iyz>0</iyz>
+          <izz>0.004046</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_elbow_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lita_converted/meshes/r_elbow_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='r_elbow_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lita_converted/meshes/r_elbow_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='r_elbow' type='revolute'>
+      <child>r_elbow_link</child>
+      <parent>r_shoulder_yaw_link</parent>
+      <axis>
+        <xyz>-7e-06 -7e-06 1</xyz>
+        <limit>
+          <lower>-0.7853</lower>
+          <upper>2.4085</upper>
+          <effort>50000</effort>
+          <velocity>500</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+          <friction>0.1</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='r_wrist_roll_link'>
+      <pose frame=''>-0.632349 -0 0.256283 -2.55359 1.57078 0.588003</pose>
+      <inertial>
+        <pose frame=''>-0 -0 0.004271 0 -0 0</pose>
+        <mass>0.033212</mass>
+        <inertia>
+          <ixx>3e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>6e-06</iyy>
+          <iyz>0</iyz>
+          <izz>8e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_wrist_roll_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lita_converted/meshes/r_wrist_roll_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='r_wrist_roll_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lita_converted/meshes/r_wrist_roll_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='r_wrist_roll' type='revolute'>
+      <child>r_wrist_roll_link</child>
+      <parent>r_elbow_link</parent>
+      <axis>
+        <xyz>1 -0 1.1e-05</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+          <friction>0.1</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='r_wrist_pitch_link'>
+      <pose frame=''>-0.652349 0 0.256283 1.57079 7e-06 -3.14159</pose>
+      <inertial>
+        <pose frame=''>0.000979 -0 -0 0 -0 0</pose>
+        <mass>0.13385</mass>
+        <inertia>
+          <ixx>2.1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.2e-05</iyy>
+          <iyz>0</iyz>
+          <izz>2.2e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_wrist_pitch_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lita_converted/meshes/r_wrist_pitch_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='r_wrist_pitch_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lita_converted/meshes/r_wrist_pitch_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='r_wrist_pitch' type='revolute'>
+      <child>r_wrist_pitch_link</child>
+      <parent>r_wrist_roll_link</parent>
+      <axis>
+        <xyz>0 -1 -4e-06</xyz>
+        <limit>
+          <lower>-0.6981</lower>
+          <upper>0.6981</upper>
+          <effort>50000</effort>
+          <velocity>500</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+          <friction>0.1</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='r_wrist_yaw_link'>
+      <pose frame=''>-0.680349 0 0.256283 -7e-06 7e-06 -3.14159</pose>
+      <inertial>
+        <pose frame=''>0.009683 -0.000791 0 0 -0 0</pose>
+        <mass>0.089949</mass>
+        <inertia>
+          <ixx>8e-06</ixx>
+          <ixy>-1e-06</ixy>
+          <ixz>0</ixz>
+          <iyy>2e-05</iyy>
+          <iyz>0</iyz>
+          <izz>2.2e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_wrist_yaw_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lita_converted/meshes/r_wrist_yaw_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='r_wrist_yaw_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lita_converted/meshes/r_wrist_yaw_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='r_wrist_yaw' type='revolute'>
+      <child>r_wrist_yaw_link</child>
+      <parent>r_wrist_pitch_link</parent>
+      <axis>
+        <xyz>-7e-06 -7e-06 1</xyz>
+        <limit>
+          <lower>-0.3141</lower>
+          <upper>0.3141</upper>
+          <effort>50000</effort>
+          <velocity>500</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+          <friction>0.1</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+  </model>
+</sdf>

@@ -1,0 +1,953 @@
+<?xml version="1.0"?>
+<robot name="lita_converted" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!--fix the upper_body_link-->
+  <link name="world"/>
+
+  <joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="upper_body_link"/>
+  </joint>
+
+  <!--This is the robot describtion-->
+  <link name="upper_body_link">
+    <inertial>
+      <origin xyz="-4.3975E-06 -1.1609E-08 0.15913" rpy="0 0 0" />
+      <mass value="26.766" />
+      <inertia
+        ixx="10"
+        ixy="10"
+        ixz="10"
+        iyy="10"
+        iyz="10"
+        izz="10" />
+    </inertial>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://lita_converted/meshes/upper_body_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.68627 0.65882 0.63922 1" />
+      </material>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://lita_converted/meshes/upper_body_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="l_shoulder_roll" type="continuous">
+    <origin xyz="0.125 0 0.26" rpy="0 -1.5708 0" />
+    <parent link="upper_body_link" />
+    <child link="l_shoulder_roll_link" />
+    <axis xyz="0 0 -1" />
+    <dynamics damping="0.7" />
+  </joint>
+
+  <link name="l_shoulder_roll_link">
+    <inertial>
+      <origin xyz="0.0033683 -7.6367E-09 -0.015946" rpy="0 0 0" />
+      <mass value="0.63417" />
+      <inertia
+        ixx="0.000315"
+        ixy="0"
+        ixz="-5.2E-05"
+        iyy="0.000373"
+        iyz="0"
+        izz="0.000525" />
+    </inertial>
+
+    <visual>
+      <origin xyz="0.125 0 0.26" rpy="0 -1.5708 0" />
+      <geometry>
+        <mesh
+          filename="package://lita_converted/meshes/l_shoulder_roll_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.68627 0.65882 0.63922 1" />
+      </material>
+    </visual>
+
+    <collision>
+      <origin xyz="0.125 0 0.26" rpy="0 -1.5708 0" />
+      <geometry>
+        <mesh
+          filename="package://lita_converted/meshes/l_shoulder_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link
+    name="l_shoulder_pitch_link">
+    <inertial>
+      <origin
+        xyz="0.0032993 5.9585E-10 -0.00098089"
+        rpy="0 0 0" />
+      <mass
+        value="1.0724" />
+      <inertia
+        ixx="0.000841"
+        ixy="0"
+        ixz="-5.4E-05"
+        iyy="0.000973"
+        iyz="0"
+        izz="0.000606" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lita_converted/meshes/l_shoulder_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68627 0.65882 0.63922 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lita_converted/meshes/l_shoulder_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_shoulder_pitch"
+    type="revolute">
+    <origin
+      xyz="-0.0037133 0 -0.052049"
+      rpy="1.5708 1.5708 0" />
+    <parent
+      link="l_shoulder_roll_link" />
+    <child
+      link="l_shoulder_pitch_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-0.6981"
+      upper="1.7104"
+      effort="50000"
+      velocity="500" />
+    <calibration
+      rising="1" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+    <safety_controller
+      soft_upper="1.7"
+      soft_lower="-0.69"
+      k_position="1"
+      k_velocity="1" />
+  </joint>
+  <link
+    name="l_shoulder_yaw_link">
+    <inertial>
+      <origin
+        xyz="0.065121 -0.0020967 1.7569E-07"
+        rpy="0 0 0" />
+      <mass
+        value="1.3826" />
+      <inertia
+        ixx="0.000398"
+        ixy="-0.000132"
+        ixz="0"
+        iyy="0.005026"
+        iyz="0"
+        izz="0.005143" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lita_converted/meshes/l_shoulder_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68627 0.65882 0.63922 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lita_converted/meshes/l_shoulder_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_shoulder_yaw"
+    type="revolute">
+    <origin
+      xyz="0.055 0 0"
+      rpy="1.5708 -4.1633E-17 -2.6021E-18" />
+    <parent
+      link="l_shoulder_pitch_link" />
+    <child
+      link="l_shoulder_yaw_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.1396"
+      upper="1.6231"
+      effort="50000"
+      velocity="500" />
+    <calibration
+      rising="1" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+    <safety_controller
+      soft_upper="1.61"
+      soft_lower="-0.13"
+      k_position="1"
+      k_velocity="1" />
+  </joint>
+  <link
+    name="l_elbow_link">
+    <inertial>
+      <origin
+        xyz="0.088184 -0.0003499 -1.9687E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.81599" />
+      <inertia
+        ixx="0.000143"
+        ixy="1.5E-05"
+        ixz="0"
+        iyy="0.004114"
+        iyz="0"
+        izz="0.004046" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lita_converted/meshes/l_elbow_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68627 0.65882 0.63922 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lita_converted/meshes/l_elbow_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_elbow"
+    type="revolute">
+    <origin
+      xyz="0.1903 0 0"
+      rpy="-4.2858E-16 9.6277E-17 -4.1263E-32" />
+    <parent
+      link="l_shoulder_yaw_link" />
+    <child
+      link="l_elbow_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.7853"
+      upper="2.4085"
+      effort="50000"
+      velocity="500" />
+    <calibration
+      rising="1" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+    <safety_controller
+      soft_upper="2.4"
+      soft_lower="-0.78"
+      k_position="1"
+      k_velocity="1" />
+  </joint>
+  <link
+    name="l_wrist_roll_link">
+    <inertial>
+      <origin
+        xyz="-1.4822E-09 1.5222E-08 -0.0042713"
+        rpy="0 0 0" />
+      <mass
+        value="0.033212" />
+      <inertia
+        ixx="3E-06"
+        ixy="0"
+        ixz="0"
+        iyy="6E-06"
+        iyz="0"
+        izz="8E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lita_converted/meshes/l_wrist_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68627 0.65882 0.63922 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lita_converted/meshes/l_wrist_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_wrist_roll"
+    type="continuous">
+    <origin
+      xyz="0.21 0 0"
+      rpy="3.1416 1.5708 0" />
+    <parent
+      link="l_elbow_link" />
+    <child
+      link="l_wrist_roll_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      effort="50000"
+      velocity="500" />
+    <calibration
+      rising="1" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+    <safety_controller
+      k_velocity="1" />
+  </joint>
+  <link
+    name="l_wrist_pitch_link">
+    <inertial>
+      <origin
+        xyz="0.0009785 -2.8101E-08 -1.4985E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.13385" />
+      <inertia
+        ixx="2.1E-05"
+        ixy="0"
+        ixz="0"
+        iyy="2.2E-05"
+        iyz="0"
+        izz="2.2E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lita_converted/meshes/l_wrist_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68627 0.65882 0.63922 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lita_converted/meshes/l_wrist_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_wrist_pitch"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.02"
+      rpy="1.5708 1.5708 0" />
+    <parent
+      link="l_wrist_roll_link" />
+    <child
+      link="l_wrist_pitch_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-0.6981"
+      upper="0.6981"
+      effort="50000"
+      velocity="500" />
+    <calibration
+      rising="1" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+    <safety_controller
+      soft_upper="0.69"
+      soft_lower="-0.69"
+      k_position="1"
+      k_velocity="1" />
+  </joint>
+  <link
+    name="l_wrist_yaw_link">
+    <inertial>
+      <origin
+        xyz="0.0096828 -0.0007914 2.2204E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.089949" />
+      <inertia
+        ixx="8E-06"
+        ixy="-1E-06"
+        ixz="0"
+        iyy="2E-05"
+        iyz="0"
+        izz="2.2E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lita_converted/meshes/l_wrist_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68627 0.65882 0.63922 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lita_converted/meshes/l_wrist_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_wrist_yaw"
+    type="revolute">
+    <origin
+      xyz="0.028 0 0"
+      rpy="1.5708 -1.0276E-16 -6.9285E-31" />
+    <parent
+      link="l_wrist_pitch_link" />
+    <child
+      link="l_wrist_yaw_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.3141"
+      upper="0.3141"
+      effort="50000"
+      velocity="500" />
+    <calibration
+      rising="1" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+    <safety_controller
+      soft_upper="0.31"
+      soft_lower="-0.31"
+      k_position="1"
+      k_velocity="1" />
+  </joint>
+  <link
+    name="r_shoulder_roll_link">
+    <inertial>
+      <origin
+        xyz="0.0033683 7.6367E-09 0.015946"
+        rpy="0 0 0" />
+      <mass
+        value="0.63417" />
+      <inertia
+        ixx="0.000315"
+        ixy="0"
+        ixz="5.2E-05"
+        iyy="0.000373"
+        iyz="0"
+        izz="0.000525" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lita_converted/meshes/r_shoulder_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68627 0.65882 0.63922 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lita_converted/meshes/r_shoulder_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_shoulder_roll"
+    type="continuous">
+    <origin
+      xyz="-0.125 0 0.26"
+      rpy="0 -1.5708 0" />
+    <parent
+      link="upper_body_link" />
+    <child
+      link="r_shoulder_roll_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      effort="50000"
+      velocity="500" />
+    <calibration
+      rising="1" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+    <safety_controller
+      k_velocity="1" />
+  </joint>
+  <link
+    name="r_shoulder_pitch_link">
+    <inertial>
+      <origin
+        xyz="0.0032993 -5.9585E-10 0.00098089"
+        rpy="0 0 0" />
+      <mass
+        value="1.0724" />
+      <inertia
+        ixx="0.000841"
+        ixy="0"
+        ixz="5.4E-05"
+        iyy="0.000973"
+        iyz="0"
+        izz="0.000606" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lita_converted/meshes/r_shoulder_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68627 0.65882 0.63922 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lita_converted/meshes/r_shoulder_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_shoulder_pitch"
+    type="revolute">
+    <origin
+      xyz="-0.0037133 0 0.052049"
+      rpy="-1.5708 -1.5708 0" />
+    <parent
+      link="r_shoulder_roll_link" />
+    <child
+      link="r_shoulder_pitch_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-0.6981"
+      upper="1.7104"
+      effort="50000"
+      velocity="500" />
+    <calibration
+      rising="1" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+    <safety_controller
+      soft_upper="1.7"
+      soft_lower="-0.69"
+      k_position="1"
+      k_velocity="1" />
+  </joint>
+  <link
+    name="r_shoulder_yaw_link">
+    <inertial>
+      <origin
+        xyz="0.065121 -0.0020967 1.7569E-07"
+        rpy="0 0 0" />
+      <mass
+        value="1.3826" />
+      <inertia
+        ixx="0.000398"
+        ixy="-0.000132"
+        ixz="0"
+        iyy="0.005026"
+        iyz="0"
+        izz="0.005143" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lita_converted/meshes/r_shoulder_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68627 0.65882 0.63922 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lita_converted/meshes/r_shoulder_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_shoulder_yaw"
+    type="revolute">
+    <origin
+      xyz="0.055 0 0"
+      rpy="-1.5708 3.2819E-17 -4.3368E-18" />
+    <parent
+      link="r_shoulder_pitch_link" />
+    <child
+      link="r_shoulder_yaw_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.1396"
+      upper="1.6231"
+      effort="50000"
+      velocity="500" />
+    <calibration
+      rising="1" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+    <safety_controller
+      soft_upper="1.61"
+      soft_lower="-0.13"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="r_elbow_link">
+    <inertial>
+      <origin
+        xyz="0.088184 -0.0003499 -1.9687E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.81599" />
+      <inertia
+        ixx="0.000143"
+        ixy="1.5E-05"
+        ixz="0"
+        iyy="0.004114"
+        iyz="0"
+        izz="0.004046" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lita_converted/meshes/r_elbow_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68627 0.65882 0.63922 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lita_converted/meshes/r_elbow_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_elbow"
+    type="revolute">
+    <origin
+      xyz="0.1903 0 0"
+      rpy="1.2818E-16 -4.3368E-18 -2.8339E-19" />
+    <parent
+      link="r_shoulder_yaw_link" />
+    <child
+      link="r_elbow_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.7853"
+      upper="2.4085"
+      effort="50000"
+      velocity="500" />
+    <calibration
+      rising="1" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+    <safety_controller
+      soft_upper="2.4"
+      soft_lower="-0.78"
+      k_position="1"
+      k_velocity="1" />
+  </joint>
+  <link
+    name="r_wrist_roll_link">
+    <inertial>
+      <origin
+        xyz="-1.4822E-09 -1.5222E-08 0.0042713"
+        rpy="0 0 0" />
+      <mass
+        value="0.033212" />
+      <inertia
+        ixx="3E-06"
+        ixy="0"
+        ixz="0"
+        iyy="6E-06"
+        iyz="0"
+        izz="8E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lita_converted/meshes/r_wrist_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68627 0.65882 0.63922 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lita_converted/meshes/r_wrist_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_wrist_roll"
+    type="continuous">
+    <origin
+      xyz="0.21 0 0"
+      rpy="0 1.5708 0" />
+    <parent
+      link="r_elbow_link" />
+    <child
+      link="r_wrist_roll_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      effort="50000"
+      velocity="500" />
+    <calibration
+      rising="1" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+    <safety_controller
+      k_velocity="1" />
+  </joint>
+  <link
+    name="r_wrist_pitch_link">
+    <inertial>
+      <origin
+        xyz="0.0009785 -2.8101E-08 -1.4985E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.13385" />
+      <inertia
+        ixx="2.1E-05"
+        ixy="0"
+        ixz="0"
+        iyy="2.2E-05"
+        iyz="0"
+        izz="2.2E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lita_converted/meshes/r_wrist_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68627 0.65882 0.63922 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lita_converted/meshes/r_wrist_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_wrist_pitch"
+    type="revolute">
+    <origin
+      xyz="0 0 0.02"
+      rpy="1.5708 -1.5708 0" />
+    <parent
+      link="r_wrist_roll_link" />
+    <child
+      link="r_wrist_pitch_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-0.6981"
+      upper="0.6981"
+      effort="50000"
+      velocity="500" />
+    <calibration
+      rising="1" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+    <safety_controller
+      soft_upper="0.69"
+      soft_lower="-0.69"
+      k_position="1"
+      k_velocity="1" />
+  </joint>
+  <link
+    name="r_wrist_yaw_link">
+    <inertial>
+      <origin
+        xyz="0.0096828 -0.0007914 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.089949" />
+      <inertia
+        ixx="8E-06"
+        ixy="-1E-06"
+        ixz="0"
+        iyy="2E-05"
+        iyz="0"
+        izz="2.2E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lita_converted/meshes/r_wrist_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68627 0.65882 0.63922 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lita_converted/meshes/r_wrist_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_wrist_yaw"
+    type="revolute">
+    <origin
+      xyz="0.028 0 0"
+      rpy="-1.5708 3.3944E-20 8.6736E-18" />
+    <parent
+      link="r_wrist_pitch_link" />
+    <child
+      link="r_wrist_yaw_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.3141"
+      upper="0.3141"
+      effort="50000"
+      velocity="500" />
+    <calibration
+      rising="1" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+    <safety_controller
+      soft_upper="0.31"
+      soft_lower="-0.31"
+      k_position="1"
+      k_velocity="1" />
+  </joint>
+</robot>
