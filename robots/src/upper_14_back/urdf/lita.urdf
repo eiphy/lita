@@ -2,7 +2,7 @@
 This file can be directly used for gazebo.-->
 
 
-<robot name="lita_converted" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="upper_14" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!--fix the upper_body_link-->
   <link name="world"/>
@@ -34,7 +34,7 @@ This file can be directly used for gazebo.-->
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/upper_body_link.STL" />
+          filename="package://upper_14/meshes/upper_body_link.STL" />
       </geometry>
       <material
         name="">
@@ -48,7 +48,7 @@ This file can be directly used for gazebo.-->
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/upper_body_link.STL" />
+          filename="package://upper_14/meshes/upper_body_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -74,7 +74,7 @@ This file can be directly used for gazebo.-->
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/l_shoulder_roll_link.STL" />
+          filename="package://upper_14/meshes/l_shoulder_roll_link.STL" />
       </geometry>
       <material
         name="">
@@ -88,7 +88,7 @@ This file can be directly used for gazebo.-->
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/l_shoulder_roll_link.STL" />
+          filename="package://upper_14/meshes/l_shoulder_roll_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -137,7 +137,7 @@ This file can be directly used for gazebo.-->
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/l_shoulder_pitch_link.STL" />
+          filename="package://upper_14/meshes/l_shoulder_pitch_link.STL" />
       </geometry>
       <material
         name="">
@@ -151,7 +151,7 @@ This file can be directly used for gazebo.-->
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/l_shoulder_pitch_link.STL" />
+          filename="package://upper_14/meshes/l_shoulder_pitch_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -205,7 +205,7 @@ This file can be directly used for gazebo.-->
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/l_shoulder_yaw_link.STL" />
+          filename="package://upper_14/meshes/l_shoulder_yaw_link.STL" />
       </geometry>
       <material
         name="">
@@ -219,7 +219,7 @@ This file can be directly used for gazebo.-->
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/l_shoulder_yaw_link.STL" />
+          filename="package://upper_14/meshes/l_shoulder_yaw_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -273,7 +273,7 @@ This file can be directly used for gazebo.-->
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/l_elbow_link.STL" />
+          filename="package://upper_14/meshes/l_elbow_link.STL" />
       </geometry>
       <material
         name="">
@@ -287,7 +287,7 @@ This file can be directly used for gazebo.-->
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/l_elbow_link.STL" />
+          filename="package://upper_14/meshes/l_elbow_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -341,7 +341,7 @@ This file can be directly used for gazebo.-->
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/l_wrist_roll_link.STL" />
+          filename="package://upper_14/meshes/l_wrist_roll_link.STL" />
       </geometry>
       <material
         name="">
@@ -355,7 +355,7 @@ This file can be directly used for gazebo.-->
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/l_wrist_roll_link.STL" />
+          filename="package://upper_14/meshes/l_wrist_roll_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -404,7 +404,7 @@ This file can be directly used for gazebo.-->
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/l_wrist_pitch_link.STL" />
+          filename="package://upper_14/meshes/l_wrist_pitch_link.STL" />
       </geometry>
       <material
         name="">
@@ -418,7 +418,7 @@ This file can be directly used for gazebo.-->
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/l_wrist_pitch_link.STL" />
+          filename="package://upper_14/meshes/l_wrist_pitch_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -472,7 +472,7 @@ This file can be directly used for gazebo.-->
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/l_wrist_yaw_link.STL" />
+          filename="package://upper_14/meshes/l_wrist_yaw_link.STL" />
       </geometry>
       <material
         name="">
@@ -486,7 +486,7 @@ This file can be directly used for gazebo.-->
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/l_wrist_yaw_link.STL" />
+          filename="package://upper_14/meshes/l_wrist_yaw_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -540,7 +540,7 @@ This file can be directly used for gazebo.-->
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/r_shoulder_roll_link.STL" />
+          filename="package://upper_14/meshes/r_shoulder_roll_link.STL" />
       </geometry>
       <material
         name="">
@@ -554,7 +554,7 @@ This file can be directly used for gazebo.-->
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/r_shoulder_roll_link.STL" />
+          filename="package://upper_14/meshes/r_shoulder_roll_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -603,7 +603,7 @@ This file can be directly used for gazebo.-->
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/r_shoulder_pitch_link.STL" />
+          filename="package://upper_14/meshes/r_shoulder_pitch_link.STL" />
       </geometry>
       <material
         name="">
@@ -617,7 +617,7 @@ This file can be directly used for gazebo.-->
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/r_shoulder_pitch_link.STL" />
+          filename="package://upper_14/meshes/r_shoulder_pitch_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -671,7 +671,7 @@ This file can be directly used for gazebo.-->
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/r_shoulder_yaw_link.STL" />
+          filename="package://upper_14/meshes/r_shoulder_yaw_link.STL" />
       </geometry>
       <material
         name="">
@@ -685,7 +685,7 @@ This file can be directly used for gazebo.-->
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/r_shoulder_yaw_link.STL" />
+          filename="package://upper_14/meshes/r_shoulder_yaw_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -738,7 +738,7 @@ This file can be directly used for gazebo.-->
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/r_elbow_link.STL" />
+          filename="package://upper_14/meshes/r_elbow_link.STL" />
       </geometry>
       <material
         name="">
@@ -752,7 +752,7 @@ This file can be directly used for gazebo.-->
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/r_elbow_link.STL" />
+          filename="package://upper_14/meshes/r_elbow_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -806,7 +806,7 @@ This file can be directly used for gazebo.-->
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/r_wrist_roll_link.STL" />
+          filename="package://upper_14/meshes/r_wrist_roll_link.STL" />
       </geometry>
       <material
         name="">
@@ -820,7 +820,7 @@ This file can be directly used for gazebo.-->
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/r_wrist_roll_link.STL" />
+          filename="package://upper_14/meshes/r_wrist_roll_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -869,7 +869,7 @@ This file can be directly used for gazebo.-->
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/r_wrist_pitch_link.STL" />
+          filename="package://upper_14/meshes/r_wrist_pitch_link.STL" />
       </geometry>
       <material
         name="">
@@ -883,7 +883,7 @@ This file can be directly used for gazebo.-->
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/r_wrist_pitch_link.STL" />
+          filename="package://upper_14/meshes/r_wrist_pitch_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -937,7 +937,7 @@ This file can be directly used for gazebo.-->
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/r_wrist_yaw_link.STL" />
+          filename="package://upper_14/meshes/r_wrist_yaw_link.STL" />
       </geometry>
       <material
         name="">
@@ -951,7 +951,7 @@ This file can be directly used for gazebo.-->
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/r_wrist_yaw_link.STL" />
+          filename="package://upper_14/meshes/r_wrist_yaw_link.STL" />
       </geometry>
     </collision>
   </link>

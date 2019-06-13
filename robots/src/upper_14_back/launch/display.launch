@@ -6,7 +6,7 @@
     default="true" />
   <param
     name="robot_description"
-    textfile="$(find lita_converted)/urdf/lita.urdf" />
+    textfile="$(find upper_14)/urdf/lita.urdf" />
   <param
     name="use_gui"
     value="$(arg gui)" />
@@ -22,5 +22,5 @@
     name="rviz"
     pkg="rviz"
     type="rviz"
-    args="-d $(find lita_converted)/urdf.rviz" />
+    args="-d $(find upper_14)/urdf.rviz" />
 </launch>

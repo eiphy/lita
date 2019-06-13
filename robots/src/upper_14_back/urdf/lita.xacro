@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot name="lita_converted" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="upper_14" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!--fix the upper_body_link-->
   <link name="world"/>
@@ -23,7 +23,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://lita_converted/meshes/upper_body_link.STL" />
+        <mesh filename="package://upper_14/meshes/upper_body_link.STL" />
       </geometry>
       <material name="">
         <color rgba="0.68627 0.65882 0.63922 1" />
@@ -33,7 +33,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://lita_converted/meshes/upper_body_link.STL" />
+        <mesh filename="package://upper_14/meshes/upper_body_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -63,7 +63,7 @@
       <origin xyz="0.125 0 0.26" rpy="0 -1.5708 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/l_shoulder_roll_link.STL" />
+          filename="package://upper_14/meshes/l_shoulder_roll_link.STL" />
       </geometry>
       <material name="">
         <color rgba="0.68627 0.65882 0.63922 1" />
@@ -74,7 +74,7 @@
       <origin xyz="0.125 0 0.26" rpy="0 -1.5708 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/l_shoulder_roll_link.STL" />
+          filename="package://upper_14/meshes/l_shoulder_roll_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -101,7 +101,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/l_shoulder_pitch_link.STL" />
+          filename="package://upper_14/meshes/l_shoulder_pitch_link.STL" />
       </geometry>
       <material
         name="">
@@ -115,7 +115,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/l_shoulder_pitch_link.STL" />
+          filename="package://upper_14/meshes/l_shoulder_pitch_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -169,7 +169,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/l_shoulder_yaw_link.STL" />
+          filename="package://upper_14/meshes/l_shoulder_yaw_link.STL" />
       </geometry>
       <material
         name="">
@@ -183,7 +183,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/l_shoulder_yaw_link.STL" />
+          filename="package://upper_14/meshes/l_shoulder_yaw_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -237,7 +237,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/l_elbow_link.STL" />
+          filename="package://upper_14/meshes/l_elbow_link.STL" />
       </geometry>
       <material
         name="">
@@ -251,7 +251,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/l_elbow_link.STL" />
+          filename="package://upper_14/meshes/l_elbow_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -305,7 +305,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/l_wrist_roll_link.STL" />
+          filename="package://upper_14/meshes/l_wrist_roll_link.STL" />
       </geometry>
       <material
         name="">
@@ -319,7 +319,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/l_wrist_roll_link.STL" />
+          filename="package://upper_14/meshes/l_wrist_roll_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -368,7 +368,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/l_wrist_pitch_link.STL" />
+          filename="package://upper_14/meshes/l_wrist_pitch_link.STL" />
       </geometry>
       <material
         name="">
@@ -382,7 +382,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/l_wrist_pitch_link.STL" />
+          filename="package://upper_14/meshes/l_wrist_pitch_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -436,7 +436,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/l_wrist_yaw_link.STL" />
+          filename="package://upper_14/meshes/l_wrist_yaw_link.STL" />
       </geometry>
       <material
         name="">
@@ -450,7 +450,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/l_wrist_yaw_link.STL" />
+          filename="package://upper_14/meshes/l_wrist_yaw_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -504,7 +504,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/r_shoulder_roll_link.STL" />
+          filename="package://upper_14/meshes/r_shoulder_roll_link.STL" />
       </geometry>
       <material
         name="">
@@ -518,7 +518,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/r_shoulder_roll_link.STL" />
+          filename="package://upper_14/meshes/r_shoulder_roll_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -567,7 +567,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/r_shoulder_pitch_link.STL" />
+          filename="package://upper_14/meshes/r_shoulder_pitch_link.STL" />
       </geometry>
       <material
         name="">
@@ -581,7 +581,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/r_shoulder_pitch_link.STL" />
+          filename="package://upper_14/meshes/r_shoulder_pitch_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -635,7 +635,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/r_shoulder_yaw_link.STL" />
+          filename="package://upper_14/meshes/r_shoulder_yaw_link.STL" />
       </geometry>
       <material
         name="">
@@ -649,7 +649,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/r_shoulder_yaw_link.STL" />
+          filename="package://upper_14/meshes/r_shoulder_yaw_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -702,7 +702,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/r_elbow_link.STL" />
+          filename="package://upper_14/meshes/r_elbow_link.STL" />
       </geometry>
       <material
         name="">
@@ -716,7 +716,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/r_elbow_link.STL" />
+          filename="package://upper_14/meshes/r_elbow_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -770,7 +770,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/r_wrist_roll_link.STL" />
+          filename="package://upper_14/meshes/r_wrist_roll_link.STL" />
       </geometry>
       <material
         name="">
@@ -784,7 +784,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/r_wrist_roll_link.STL" />
+          filename="package://upper_14/meshes/r_wrist_roll_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -833,7 +833,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/r_wrist_pitch_link.STL" />
+          filename="package://upper_14/meshes/r_wrist_pitch_link.STL" />
       </geometry>
       <material
         name="">
@@ -847,7 +847,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/r_wrist_pitch_link.STL" />
+          filename="package://upper_14/meshes/r_wrist_pitch_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -901,7 +901,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/r_wrist_yaw_link.STL" />
+          filename="package://upper_14/meshes/r_wrist_yaw_link.STL" />
       </geometry>
       <material
         name="">
@@ -915,7 +915,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lita_converted/meshes/r_wrist_yaw_link.STL" />
+          filename="package://upper_14/meshes/r_wrist_yaw_link.STL" />
       </geometry>
     </collision>
   </link>
