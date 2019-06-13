@@ -1,0 +1,8 @@
+prefix=/home/ei/engine/lita/robots/devel
+
+Name: upper_14
+Description: Description of upper_14
+Version: 0.5.0
+Cflags: 
+Libs: -L/home/ei/engine/lita/robots/devel/lib 
+Requires: 

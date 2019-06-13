@@ -1,0 +1,8 @@
+prefix=/home/ei/engine/lita/robots/devel
+
+Name: lita_converted
+Description: Description of lita_converted
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/ei/engine/lita/robots/devel/lib 
+Requires: 

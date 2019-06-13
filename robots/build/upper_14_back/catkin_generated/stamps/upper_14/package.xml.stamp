@@ -1,0 +1,22 @@
+<package format='2'>
+  <name>upper_14</name>
+  <version>0.5.0</version>
+  <description>
+    URDF Description package for Lita_upper_body.SLDASM
+    This package contains configuration data, 3D models and launch files
+for Lita.SLDASM robot
+  </description>
+  <maintainer email="eiphnix@gmail.com">eiphy</maintainer>
+  <license>BSD</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roslaunch</build_depend>
+  <build_export_depend>roslaunch</build_export_depend>
+  <exec_depend>roslaunch</exec_depend>
+  <depend>robot_state_publisher</depend>
+  <depend>rviz</depend>
+  <depend>joint_state_publisher</depend>
+  <depend>gazebo</depend>
+  <export>
+    <architecture_independent />
+  </export>
+</package>
