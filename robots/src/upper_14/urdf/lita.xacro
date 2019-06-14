@@ -41,7 +41,6 @@
     <origin xyz="0.125 0 0.26" rpy="0 -1.5708 0" />
     <parent link="upper_body_link" />
     <child link="l_shoulder_roll_link" />
-    <axis xyz="0 0 1" />
     <dynamics damping="0.7" friction="0.2"/>
   </joint>
 
@@ -107,7 +106,9 @@
     <child link="l_shoulder_pitch_link" />
     <axis xyz="0 0 -1" />
     <limit lower="-0.6981" upper="1.7104" effort="50000" velocity="500" />
-    <dynamics damping="0.7" friction="0.2"  />
+    <calibration rising="1" />
+    <dynamics damping="0.7" friction="0.1" />
+    <safety_controller soft_upper="1.7" soft_lower="-0.69" k_position="1" k_velocity="1" />
   </joint>
 
   <link name="l_shoulder_yaw_link">
@@ -144,7 +145,9 @@
     <child link="l_shoulder_yaw_link" />
     <axis xyz="0 0 1" />
     <limit lower="-0.1396" upper="1.6231" effort="50000" velocity="500" />
-    <dynamics damping="0.7" friction="0.2"  />
+    <calibration rising="1" />
+    <dynamics damping="0.7" friction="0.1" />
+    <safety_controller soft_upper="1.61" soft_lower="-0.13" k_position="1" k_velocity="1" />
   </joint>
 
   <link name="l_elbow_link">
@@ -181,7 +184,9 @@
     <child link="l_elbow_link" />
     <axis xyz="0 0 1" />
     <limit lower="-0.7853" upper="2.4085" effort="50000" velocity="500" />
-    <dynamics damping="0.7" friction="0.2"  />
+    <calibration rising="1" />
+    <dynamics damping="0.7" friction="0.1" />
+    <safety_controller soft_upper="2.4" soft_lower="-0.78" k_position="1" k_velocity="1" />
   </joint>
 
   <link name="l_wrist_roll_link">
@@ -218,7 +223,9 @@
     <child link="l_wrist_roll_link" />
     <axis xyz="0 0 1" />
     <limit effort="50000" velocity="500" />
-    <dynamics damping="0.7" friction="0.2"  />
+    <calibration rising="1" />
+    <dynamics damping="0.7" friction="0.1" />
+    <safety_controller k_velocity="1" />
   </joint>
 
   <link name="l_wrist_pitch_link">
@@ -226,9 +233,12 @@
       <origin xyz="0.0009785 -2.8101E-08 -1.4985E-08" rpy="0 0 0" />
       <mass value="0.13385" />
       <inertia
-        ixx="2.1E-03" ixy="0" ixz="0"
-        iyy="2.2E-03" iyz="0"
-        izz="2.2E-03" />
+        ixx="2.1E-05"
+        ixy="0"
+        ixz="0"
+        iyy="2.2E-05"
+        iyz="0"
+        izz="2.2E-05" />
     </inertial>
 
     <visual>
@@ -248,14 +258,33 @@
       </geometry>
     </collision>
   </link>
-
-  <joint name="l_wrist_pitch" type="revolute">
-    <origin xyz="0 0 -0.02" rpy="1.5708 1.5708 0" />
-    <parent link="l_wrist_roll_link" />
-    <child link="l_wrist_pitch_link" />
-    <axis xyz="0 0 -1" />
-    <limit lower="-0.6981" upper="0.6981" effort="50000" velocity="500" />
-    <dynamics damping="0.7" friction="0.2"  />
+  <joint
+    name="l_wrist_pitch"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.02"
+      rpy="1.5708 1.5708 0" />
+    <parent
+      link="l_wrist_roll_link" />
+    <child
+      link="l_wrist_pitch_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-0.6981"
+      upper="0.6981"
+      effort="50000"
+      velocity="500" />
+    <calibration
+      rising="1" />
+    <dynamics
+      damping="0.7"
+      friction="0.1" />
+    <safety_controller
+      soft_upper="0.69"
+      soft_lower="-0.69"
+      k_position="1"
+      k_velocity="1" />
   </joint>
 
   <link name="l_wrist_yaw_link">
@@ -263,9 +292,12 @@
       <origin xyz="0.0096828 -0.0007914 2.2204E-16" rpy="0 0 0" />
       <mass value="0.089949" />
       <inertia
-        ixx="8E-04" ixy="-1E-04" ixz="0"
-        iyy="2E-04" iyz="0"
-        izz="2.2E-04" />
+        ixx="8E-06"
+        ixy="-1E-06"
+        ixz="0"
+        iyy="2E-05"
+        iyz="0"
+        izz="2.2E-05" />
     </inertial>
 
     <visual>
@@ -285,14 +317,33 @@
       </geometry>
     </collision>
   </link>
-
-  <joint name="l_wrist_yaw" type="revolute">
-    <origin xyz="0.028 0 0" rpy="1.5708 -1.0276E-16 -6.9285E-31" />
-    <parent link="l_wrist_pitch_link" />
-    <child link="l_wrist_yaw_link" />
-    <axis xyz="0 0 1" />
-    <limit lower="-0.3141" upper="0.3141" effort="50000" velocity="500" />
-    <dynamics damping="0.7" friction="0.2"  />
+  <joint
+    name="l_wrist_yaw"
+    type="revolute">
+    <origin
+      xyz="0.028 0 0"
+      rpy="1.5708 -1.0276E-16 -6.9285E-31" />
+    <parent
+      link="l_wrist_pitch_link" />
+    <child
+      link="l_wrist_yaw_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.3141"
+      upper="0.3141"
+      effort="50000"
+      velocity="500" />
+    <calibration
+      rising="1" />
+    <dynamics
+      damping="0.7"
+      friction="0.1" />
+    <safety_controller
+      soft_upper="0.31"
+      soft_lower="-0.31"
+      k_position="1"
+      k_velocity="1" />
   </joint>
 
   <link name="r_shoulder_roll_link">
@@ -322,14 +373,28 @@
       </geometry>
     </collision>
   </link>
-
-  <joint name="r_shoulder_roll" type="continuous">
-    <origin xyz="-0.125 0 0.26" rpy="0 -1.5708 0" />
-    <parent link="upper_body_link" />
-    <child link="r_shoulder_roll_link" />
-    <axis xyz="0 0 -1" />
-    <limit effort="50000" velocity="500" />
-    <dynamics damping="0.7" friction="0.2"  />
+  <joint
+    name="r_shoulder_roll"
+    type="continuous">
+    <origin
+      xyz="-0.125 0 0.26"
+      rpy="0 -1.5708 0" />
+    <parent
+      link="upper_body_link" />
+    <child
+      link="r_shoulder_roll_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      effort="50000"
+      velocity="500" />
+    <calibration
+      rising="1" />
+    <dynamics
+      damping="0.7"
+      friction="0.1" />
+    <safety_controller
+      k_velocity="1" />
   </joint>
 
   <link name="r_shoulder_pitch_link">
@@ -359,14 +424,33 @@
       </geometry>
     </collision>
   </link>
-
-  <joint name="r_shoulder_pitch" type="revolute">
-    <origin xyz="-0.0037133 0 0.052049" rpy="-1.5708 -1.5708 0" />
-    <parent link="r_shoulder_roll_link" />
-    <child link="r_shoulder_pitch_link" />
-    <axis xyz="0 0 -1" />
-    <limit lower="-0.6981" upper="1.7104" effort="50000" velocity="500" />
-    <dynamics damping="0.7" friction="0.2"  />
+  <joint
+    name="r_shoulder_pitch"
+    type="revolute">
+    <origin
+      xyz="-0.0037133 0 0.052049"
+      rpy="-1.5708 -1.5708 0" />
+    <parent
+      link="r_shoulder_roll_link" />
+    <child
+      link="r_shoulder_pitch_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-0.6981"
+      upper="1.7104"
+      effort="50000"
+      velocity="500" />
+    <calibration
+      rising="1" />
+    <dynamics
+      damping="0.7"
+      friction="0.1" />
+    <safety_controller
+      soft_upper="1.7"
+      soft_lower="-0.69"
+      k_position="1"
+      k_velocity="1" />
   </joint>
 
   <link name="r_shoulder_yaw_link">
@@ -396,14 +480,32 @@
       </geometry>
     </collision>
   </link>
-
-  <joint name="r_shoulder_yaw" type="revolute">
-    <origin xyz="0.055 0 0" rpy="-1.5708 3.2819E-17 -4.3368E-18" />
-    <parent link="r_shoulder_pitch_link" />
-    <child link="r_shoulder_yaw_link" />
-    <axis xyz="0 0 1" />
-    <limit lower="-0.1396" upper="1.6231" effort="50000" velocity="500" />
-    <dynamics damping="0.7" friction="0.2"  />
+  <joint
+    name="r_shoulder_yaw"
+    type="revolute">
+    <origin
+      xyz="0.055 0 0"
+      rpy="-1.5708 3.2819E-17 -4.3368E-18" />
+    <parent
+      link="r_shoulder_pitch_link" />
+    <child
+      link="r_shoulder_yaw_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.1396"
+      upper="1.6231"
+      effort="50000"
+      velocity="500" />
+    <calibration
+      rising="1" />
+    <dynamics
+      damping="0.7"
+      friction="0.1" />
+    <safety_controller
+      soft_upper="1.61"
+      soft_lower="-0.13"
+      k_velocity="0" />
   </joint>
 
   <link name="r_elbow_link">
@@ -433,14 +535,33 @@
       </geometry>
     </collision>
   </link>
-
-  <joint name="r_elbow" type="revolute">
-    <origin xyz="0.1903 0 0" rpy="1.2818E-16 -4.3368E-18 -2.8339E-19" />
-    <parent link="r_shoulder_yaw_link" />
-    <child link="r_elbow_link" />
-    <axis xyz="0 0 1" />
-    <limit lower="-0.7853" upper="2.4085" effort="50000" velocity="500" />
-    <dynamics damping="0.7" friction="0.2"  />
+  <joint
+    name="r_elbow"
+    type="revolute">
+    <origin
+      xyz="0.1903 0 0"
+      rpy="1.2818E-16 -4.3368E-18 -2.8339E-19" />
+    <parent
+      link="r_shoulder_yaw_link" />
+    <child
+      link="r_elbow_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.7853"
+      upper="2.4085"
+      effort="50000"
+      velocity="500" />
+    <calibration
+      rising="1" />
+    <dynamics
+      damping="0.7"
+      friction="0.1" />
+    <safety_controller
+      soft_upper="2.4"
+      soft_lower="-0.78"
+      k_position="1"
+      k_velocity="1" />
   </joint>
 
   <link name="r_wrist_roll_link">
@@ -448,9 +569,12 @@
       <origin xyz="-1.4822E-09 -1.5222E-08 0.0042713" rpy="0 0 0" />
       <mass value="0.033212" />
       <inertia
-        ixx="3E-04" ixy="0" ixz="0"
-        iyy="6E-04" iyz="0"
-        izz="8E-04" />
+        ixx="3E-06"
+        ixy="0"
+        ixz="0"
+        iyy="6E-06"
+        iyz="0"
+        izz="8E-06" />
     </inertial>
 
     <visual>
@@ -470,14 +594,28 @@
       </geometry>
     </collision>
   </link>
-
-  <joint name="r_wrist_roll" type="continuous">
-    <origin xyz="0.21 0 0" rpy="0 1.5708 0" />
-    <parent link="r_elbow_link" />
-    <child link="r_wrist_roll_link" />
-    <axis xyz="0 0 -1" />
-    <limit effort="50000" velocity="500" />
-    <dynamics damping="0.7" friction="0.2"  />
+  <joint
+    name="r_wrist_roll"
+    type="continuous">
+    <origin
+      xyz="0.21 0 0"
+      rpy="0 1.5708 0" />
+    <parent
+      link="r_elbow_link" />
+    <child
+      link="r_wrist_roll_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      effort="50000"
+      velocity="500" />
+    <calibration
+      rising="1" />
+    <dynamics
+      damping="0.7"
+      friction="0.1" />
+    <safety_controller
+      k_velocity="1" />
   </joint>
 
   <link name="r_wrist_pitch_link">
@@ -485,9 +623,12 @@
       <origin xyz="0.0009785 -2.8101E-08 -1.4985E-08" rpy="0 0 0" />
       <mass value="0.13385" />
       <inertia
-        ixx="2.1E-04" ixy="0" ixz="0"
-        iyy="2.2E-04" iyz="0"
-        izz="2.2E-04" />
+        ixx="2.1E-05"
+        ixy="0"
+        ixz="0"
+        iyy="2.2E-05"
+        iyz="0"
+        izz="2.2E-05" />
     </inertial>
 
     <visual>
@@ -507,14 +648,33 @@
       </geometry>
     </collision>
   </link>
-
-  <joint name="r_wrist_pitch" type="revolute">
-    <origin xyz="0 0 0.02" rpy="1.5708 -1.5708 0" />
-    <parent link="r_wrist_roll_link" />
-    <child link="r_wrist_pitch_link" />
-    <axis xyz="0 0 -1" />
-    <limit lower="-0.6981" upper="0.6981" effort="50000" velocity="500" />
-    <dynamics damping="0.7" friction="0.2"  />
+  <joint
+    name="r_wrist_pitch"
+    type="revolute">
+    <origin
+      xyz="0 0 0.02"
+      rpy="1.5708 -1.5708 0" />
+    <parent
+      link="r_wrist_roll_link" />
+    <child
+      link="r_wrist_pitch_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-0.6981"
+      upper="0.6981"
+      effort="50000"
+      velocity="500" />
+    <calibration
+      rising="1" />
+    <dynamics
+      damping="0.7"
+      friction="0.1" />
+    <safety_controller
+      soft_upper="0.69"
+      soft_lower="-0.69"
+      k_position="1"
+      k_velocity="1" />
   </joint>
 
   <link name="r_wrist_yaw_link">
@@ -522,9 +682,12 @@
       <origin xyz="0.0096828 -0.0007914 0" rpy="0 0 0" />
       <mass value="0.089949" />
       <inertia
-        ixx="8E-04" ixy="-1E-04" ixz="0"
-        iyy="2E-04" iyz="0"
-        izz="2.2E-04" />
+        ixx="8E-06"
+        ixy="-1E-06"
+        ixz="0"
+        iyy="2E-05"
+        iyz="0"
+        izz="2.2E-05" />
     </inertial>
 
     <visual>
@@ -544,175 +707,32 @@
       </geometry>
     </collision>
   </link>
-
-  <joint name="r_wrist_yaw" type="revolute">
-    <origin xyz="0.028 0 0" rpy="-1.5708 3.3944E-20 8.6736E-18" />
-    <parent link="r_wrist_pitch_link" />
-    <child link="r_wrist_yaw_link" />
-    <axis xyz="0 0 1" />
-    <limit lower="-0.3141" upper="0.3141" effort="50000" velocity="500" />
-    <dynamics damping="0.7" friction="0.2"  />
+  <joint
+    name="r_wrist_yaw"
+    type="revolute">
+    <origin
+      xyz="0.028 0 0"
+      rpy="-1.5708 3.3944E-20 8.6736E-18" />
+    <parent
+      link="r_wrist_pitch_link" />
+    <child
+      link="r_wrist_yaw_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.3141"
+      upper="0.3141"
+      effort="50000"
+      velocity="500" />
+    <calibration
+      rising="1" />
+    <dynamics
+      damping="0.7"
+      friction="0.1" />
+    <safety_controller
+      soft_upper="0.31"
+      soft_lower="-0.31"
+      k_position="1"
+      k_velocity="1" />
   </joint>
-
-  <transmission name="tran1">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="l_shoulder_roll">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor1">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-
-  <transmission name="tran2">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="l_shoulder_pitch">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor2">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-
-  <transmission name="tran3">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="l_shoulder_yaw">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor3">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-
-  <transmission name="tran4">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="l_elbow">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor4">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-
-  <transmission name="tran5">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="l_wrist_roll">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor5">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-
-  <transmission name="tran6">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="l_wrist_pitch">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor6">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-
-  <transmission name="tran7">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="l_wrist_yaw">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor7">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-
-  <transmission name="tran8">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="r_shoulder_roll">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor8">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-
-  <transmission name="tran9">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="r_shoulder_pitch">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor9">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-
-  <transmission name="tran10">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="r_shoulder_yaw">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor10">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-
-  <transmission name="tran11">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="r_elbow">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor11">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-
-  <transmission name="tran12">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="r_wrist_roll">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor12">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-
-  <transmission name="tran13">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="r_wrist_pitch">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor13">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-
-  <transmission name="tran14">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="r_wrist_yaw">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor14">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-
-  <gazebo>
-    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-      <robotNamespace>/lita</robotNamespace>
-      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
-    </plugin>
-  </gazebo>
-
 </robot>
