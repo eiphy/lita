@@ -1,2 +1,2 @@
-gazebo_ros_demos/custom_plugin_tutorial:gazebo_ros_demos/rrbot_control:gazebo_ros_demos/rrbot_description:gazebo_ros_demos/rrbot_gazebo:upper_14_back
+gazebo_ros_demos/custom_plugin_tutorial:gazebo_ros_demos/rrbot_control:gazebo_ros_demos/rrbot_description:gazebo_ros_demos/rrbot_gazebo:upper_14
 -DCATKIN_DEVEL_PREFIX=/home/ei/engine/lita/robots/devel -DCMAKE_INSTALL_PREFIX=/home/ei/engine/lita/robots/install -G Unix Makefiles

@@ -51,19 +51,15 @@
       <origin xyz="0.0033683 -7.6367E-09 -0.015946" rpy="0 0 0" />
       <mass value="0.63417" />
       <inertia
-        ixx="0.000315"
-        ixy="0"
-        ixz="-5.2E-05"
-        iyy="0.000373"
-        iyz="0"
+        ixx="0.000315" ixy="0" ixz="-5.2E-05"
+        iyy="0.000373" iyz="0"
         izz="0.000525" />
     </inertial>
 
     <visual>
-      <origin xyz="0.125 0 0.26" rpy="0 -1.5708 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://upper_14/meshes/l_shoulder_roll_link.STL" />
+        <mesh filename="package://upper_14/meshes/l_shoulder_roll_link.STL" />
       </geometry>
       <material name="">
         <color rgba="0.68627 0.65882 0.63922 1" />
@@ -71,281 +67,171 @@
     </visual>
 
     <collision>
-      <origin xyz="0.125 0 0.26" rpy="0 -1.5708 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://upper_14/meshes/l_shoulder_roll_link.STL" />
+        <mesh filename="package://upper_14/meshes/l_shoulder_roll_link.STL" />
       </geometry>
     </collision>
   </link>
 
-  <link
-    name="l_shoulder_pitch_link">
+  <link name="l_shoulder_pitch_link">
     <inertial>
-      <origin
-        xyz="0.0032993 5.9585E-10 -0.00098089"
-        rpy="0 0 0" />
-      <mass
-        value="1.0724" />
+      <origin xyz="0.0032993 5.9585E-10 -0.00098089" rpy="0 0 0" />
+      <mass value="1.0724" />
       <inertia
-        ixx="0.000841"
-        ixy="0"
-        ixz="-5.4E-05"
-        iyy="0.000973"
-        iyz="0"
+        ixx="0.000841" ixy="0" ixz="-5.4E-05"
+        iyy="0.000973" iyz="0"
         izz="0.000606" />
     </inertial>
+
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://upper_14/meshes/l_shoulder_pitch_link.STL" />
+        <mesh filename="package://upper_14/meshes/l_shoulder_pitch_link.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.68627 0.65882 0.63922 1" />
+      <material name="">
+        <color rgba="0.68627 0.65882 0.63922 1" />
       </material>
     </visual>
+
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://upper_14/meshes/l_shoulder_pitch_link.STL" />
+        <mesh filename="package://upper_14/meshes/l_shoulder_pitch_link.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="l_shoulder_pitch"
-    type="revolute">
-    <origin
-      xyz="-0.0037133 0 -0.052049"
-      rpy="1.5708 1.5708 0" />
-    <parent
-      link="l_shoulder_roll_link" />
-    <child
-      link="l_shoulder_pitch_link" />
-    <axis
-      xyz="0 0 -1" />
-    <limit
-      lower="-0.6981"
-      upper="1.7104"
-      effort="50000"
-      velocity="500" />
-    <calibration
-      rising="1" />
-    <dynamics
-      damping="0.1"
-      friction="0.1" />
-    <safety_controller
-      soft_upper="1.7"
-      soft_lower="-0.69"
-      k_position="1"
-      k_velocity="1" />
+
+  <joint name="l_shoulder_pitch" type="revolute">
+    <origin xyz="-0.0037133 0 -0.052049" rpy="1.5708 1.5708 0" />
+    <parent link="l_shoulder_roll_link" />
+    <child link="l_shoulder_pitch_link" />
+    <axis xyz="0 0 -1" />
+    <limit lower="-0.6981" upper="1.7104" effort="50000" velocity="500" />
+    <calibration rising="1" />
+    <dynamics damping="0.7" friction="0.1" />
+    <safety_controller soft_upper="1.7" soft_lower="-0.69" k_position="1" k_velocity="1" />
   </joint>
-  <link
-    name="l_shoulder_yaw_link">
+
+  <link name="l_shoulder_yaw_link">
     <inertial>
-      <origin
-        xyz="0.065121 -0.0020967 1.7569E-07"
-        rpy="0 0 0" />
-      <mass
-        value="1.3826" />
+      <origin xyz="0.065121 -0.0020967 1.7569E-07" rpy="0 0 0" />
+      <mass value="1.3826" />
       <inertia
-        ixx="0.000398"
-        ixy="-0.000132"
-        ixz="0"
-        iyy="0.005026"
-        iyz="0"
+        ixx="0.000398" ixy="-0.000132" ixz="0"
+        iyy="0.005026" iyz="0"
         izz="0.005143" />
     </inertial>
+
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://upper_14/meshes/l_shoulder_yaw_link.STL" />
+        <mesh filename="package://upper_14/meshes/l_shoulder_yaw_link.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.68627 0.65882 0.63922 1" />
+      <material name="">
+        <color rgba="0.68627 0.65882 0.63922 1" />
       </material>
     </visual>
+
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://upper_14/meshes/l_shoulder_yaw_link.STL" />
+        <mesh filename="package://upper_14/meshes/l_shoulder_yaw_link.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="l_shoulder_yaw"
-    type="revolute">
-    <origin
-      xyz="0.055 0 0"
-      rpy="1.5708 -4.1633E-17 -2.6021E-18" />
-    <parent
-      link="l_shoulder_pitch_link" />
-    <child
-      link="l_shoulder_yaw_link" />
-    <axis
-      xyz="0 0 1" />
-    <limit
-      lower="-0.1396"
-      upper="1.6231"
-      effort="50000"
-      velocity="500" />
-    <calibration
-      rising="1" />
-    <dynamics
-      damping="0.1"
-      friction="0.1" />
-    <safety_controller
-      soft_upper="1.61"
-      soft_lower="-0.13"
-      k_position="1"
-      k_velocity="1" />
+
+  <joint name="l_shoulder_yaw" type="revolute">
+    <origin xyz="0.055 0 0" rpy="1.5708 -4.1633E-17 -2.6021E-18" />
+    <parent link="l_shoulder_pitch_link" />
+    <child link="l_shoulder_yaw_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-0.1396" upper="1.6231" effort="50000" velocity="500" />
+    <calibration rising="1" />
+    <dynamics damping="0.7" friction="0.1" />
+    <safety_controller soft_upper="1.61" soft_lower="-0.13" k_position="1" k_velocity="1" />
   </joint>
-  <link
-    name="l_elbow_link">
+
+  <link name="l_elbow_link">
     <inertial>
-      <origin
-        xyz="0.088184 -0.0003499 -1.9687E-07"
-        rpy="0 0 0" />
-      <mass
-        value="0.81599" />
+      <origin xyz="0.088184 -0.0003499 -1.9687E-07" rpy="0 0 0" />
+      <mass value="0.81599" />
       <inertia
-        ixx="0.000143"
-        ixy="1.5E-05"
-        ixz="0"
-        iyy="0.004114"
-        iyz="0"
+        ixx="0.000143" ixy="1.5E-05" ixz="0"
+        iyy="0.004114" iyz="0"
         izz="0.004046" />
     </inertial>
+
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://upper_14/meshes/l_elbow_link.STL" />
+        <mesh filename="package://upper_14/meshes/l_elbow_link.STL" />
       </geometry>
       <material
         name="">
-        <color
-          rgba="0.68627 0.65882 0.63922 1" />
+        <color rgba="0.68627 0.65882 0.63922 1" />
       </material>
     </visual>
+
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://upper_14/meshes/l_elbow_link.STL" />
+        <mesh filename="package://upper_14/meshes/l_elbow_link.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="l_elbow"
-    type="revolute">
-    <origin
-      xyz="0.1903 0 0"
-      rpy="-4.2858E-16 9.6277E-17 -4.1263E-32" />
-    <parent
-      link="l_shoulder_yaw_link" />
-    <child
-      link="l_elbow_link" />
-    <axis
-      xyz="0 0 1" />
-    <limit
-      lower="-0.7853"
-      upper="2.4085"
-      effort="50000"
-      velocity="500" />
-    <calibration
-      rising="1" />
-    <dynamics
-      damping="0.1"
-      friction="0.1" />
-    <safety_controller
-      soft_upper="2.4"
-      soft_lower="-0.78"
-      k_position="1"
-      k_velocity="1" />
+
+  <joint name="l_elbow" type="revolute">
+    <origin xyz="0.1903 0 0" rpy="-4.2858E-16 9.6277E-17 -4.1263E-32" />
+    <parent link="l_shoulder_yaw_link" />
+    <child link="l_elbow_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-0.7853" upper="2.4085" effort="50000" velocity="500" />
+    <calibration rising="1" />
+    <dynamics damping="0.7" friction="0.1" />
+    <safety_controller soft_upper="2.4" soft_lower="-0.78" k_position="1" k_velocity="1" />
   </joint>
-  <link
-    name="l_wrist_roll_link">
+
+  <link name="l_wrist_roll_link">
     <inertial>
-      <origin
-        xyz="-1.4822E-09 1.5222E-08 -0.0042713"
-        rpy="0 0 0" />
-      <mass
-        value="0.033212" />
+      <origin xyz="-1.4822E-09 1.5222E-08 -0.0042713" rpy="0 0 0" />
+      <mass value="0.033212" />
       <inertia
-        ixx="3E-06"
-        ixy="0"
-        ixz="0"
-        iyy="6E-06"
-        iyz="0"
+        ixx="3E-06" ixy="0" ixz="0"
+        iyy="6E-06" iyz="0"
         izz="8E-06" />
     </inertial>
+
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://upper_14/meshes/l_wrist_roll_link.STL" />
+        <mesh filename="package://upper_14/meshes/l_wrist_roll_link.STL" />
       </geometry>
       <material
         name="">
-        <color
-          rgba="0.68627 0.65882 0.63922 1" />
+        <color rgba="0.68627 0.65882 0.63922 1" />
       </material>
     </visual>
+
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://upper_14/meshes/l_wrist_roll_link.STL" />
+        <mesh filename="package://upper_14/meshes/l_wrist_roll_link.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="l_wrist_roll"
-    type="continuous">
-    <origin
-      xyz="0.21 0 0"
-      rpy="3.1416 1.5708 0" />
-    <parent
-      link="l_elbow_link" />
-    <child
-      link="l_wrist_roll_link" />
-    <axis
-      xyz="0 0 -1" />
-    <limit
-      effort="50000"
-      velocity="500" />
-    <calibration
-      rising="1" />
-    <dynamics
-      damping="0.1"
-      friction="0.1" />
-    <safety_controller
-      k_velocity="1" />
+
+  <joint name="l_wrist_roll" type="continuous">
+    <origin xyz="0.21 0 0" rpy="3.1416 1.5708 0" />
+    <parent link="l_elbow_link" />
+    <child link="l_wrist_roll_link" />
+    <axis xyz="0 0 -1" />
+    <limit effort="50000" velocity="500" />
+    <calibration rising="1" />
+    <dynamics damping="0.7" friction="0.1" />
+    <safety_controller k_velocity="1" />
   </joint>
+
   <link
     name="l_wrist_pitch_link">
     <inertial>
@@ -406,7 +292,7 @@
     <calibration
       rising="1" />
     <dynamics
-      damping="0.1"
+      damping="0.7"
       friction="0.1" />
     <safety_controller
       soft_upper="0.69"
@@ -474,7 +360,7 @@
     <calibration
       rising="1" />
     <dynamics
-      damping="0.1"
+      damping="0.7"
       friction="0.1" />
     <safety_controller
       soft_upper="0.31"
@@ -540,7 +426,7 @@
     <calibration
       rising="1" />
     <dynamics
-      damping="0.1"
+      damping="0.7"
       friction="0.1" />
     <safety_controller
       k_velocity="1" />
@@ -605,7 +491,7 @@
     <calibration
       rising="1" />
     <dynamics
-      damping="0.1"
+      damping="0.7"
       friction="0.1" />
     <safety_controller
       soft_upper="1.7"
@@ -673,7 +559,7 @@
     <calibration
       rising="1" />
     <dynamics
-      damping="0.1"
+      damping="0.7"
       friction="0.1" />
     <safety_controller
       soft_upper="1.61"
@@ -740,7 +626,7 @@
     <calibration
       rising="1" />
     <dynamics
-      damping="0.1"
+      damping="0.7"
       friction="0.1" />
     <safety_controller
       soft_upper="2.4"
@@ -806,7 +692,7 @@
     <calibration
       rising="1" />
     <dynamics
-      damping="0.1"
+      damping="0.7"
       friction="0.1" />
     <safety_controller
       k_velocity="1" />
@@ -871,7 +757,7 @@
     <calibration
       rising="1" />
     <dynamics
-      damping="0.1"
+      damping="0.7"
       friction="0.1" />
     <safety_controller
       soft_upper="0.69"
@@ -939,7 +825,7 @@
     <calibration
       rising="1" />
     <dynamics
-      damping="0.1"
+      damping="0.7"
       friction="0.1" />
     <safety_controller
       soft_upper="0.31"

@@ -52,3 +52,19 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/upper_14" TYPE FILE FILES "/home/ei/engine/lita/robots/src/upper_14/package.xml")
 endif()
 
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/upper_14/config" TYPE DIRECTORY FILES "/home/ei/engine/lita/robots/src/upper_14/config/")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/upper_14/launch" TYPE DIRECTORY FILES "/home/ei/engine/lita/robots/src/upper_14/launch/")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/upper_14/meshes" TYPE DIRECTORY FILES "/home/ei/engine/lita/robots/src/upper_14/meshes/")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/upper_14/urdf" TYPE DIRECTORY FILES "/home/ei/engine/lita/robots/src/upper_14/urdf/")
+endif()
+

@@ -931,10 +931,10 @@ tf_DIR:PATH=/opt/ros/melodic/share/tf/cmake
 trajectory_msgs_DIR:PATH=/opt/ros/melodic/share/trajectory_msgs/cmake
 
 //Value Computed by CMake
-upper_14_BINARY_DIR:STATIC=/home/ei/engine/lita/robots/build/upper_14_back
+upper_14_BINARY_DIR:STATIC=/home/ei/engine/lita/robots/build/upper_14
 
 //Value Computed by CMake
-upper_14_SOURCE_DIR:STATIC=/home/ei/engine/lita/robots/src/upper_14_back
+upper_14_SOURCE_DIR:STATIC=/home/ei/engine/lita/robots/src/upper_14
 
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/melodic/share/xmlrpcpp/cmake

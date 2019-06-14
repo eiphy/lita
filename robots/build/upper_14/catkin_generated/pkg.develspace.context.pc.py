@@ -5,4 +5,4 @@ PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "upper_14"
 PROJECT_SPACE_DIR = "/home/ei/engine/lita/robots/devel"
-PROJECT_VERSION = "0.0.1"
+PROJECT_VERSION = "0.5.0"

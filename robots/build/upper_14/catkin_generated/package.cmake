@@ -1,5 +1,5 @@
 set(_CATKIN_CURRENT_PACKAGE "upper_14")
-set(upper_14_VERSION "0.0.1")
+set(upper_14_VERSION "0.5.0")
 set(upper_14_MAINTAINER "eiphy <eiphnix@gmail.com>")
 set(upper_14_PACKAGE_FORMAT "2")
 set(upper_14_BUILD_DEPENDS "roslaunch" "robot_state_publisher" "rviz" "joint_state_publisher" "gazebo")
