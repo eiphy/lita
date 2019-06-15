@@ -4,6 +4,20 @@ This project aims to develop intuition for a robot-lita.
 
 The intellegnet topics may be involved, but is not the main focus of this project.
 
+-----------------------------------------------------------------------------------------------------------------------------
+
+Robot in Gazebo:
+
+tips:
+
+1. You may need to re-clone the repository if fail to build the workspace.
+
+2. ros_control package is needed, please follow the instruction in <http://wiki.ros.org/ros_control>
+
+   Update the key if you get errors.
+
+
+
 <<<<<<< basic_interpolator_build
 4.13:
 Accelerator finished and mannual mode finished.

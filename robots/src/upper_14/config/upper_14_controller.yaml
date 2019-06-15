@@ -13,7 +13,7 @@ lita:
   joint2_position_controller:
     type: effort_controllers/JointPositionController
     joint: l_shoulder_pitch
-    pid: {p: 1.0, i: 0.01, d: 1.0}
+    pid: {p: 100.0, i: 0.01, d: 1.0}
 
   joint3_position_controller:
     type: effort_controllers/JointPositionController
@@ -38,17 +38,17 @@ lita:
   joint7_position_controller:
     type: effort_controllers/JointPositionController
     joint: l_wrist_yaw
-    pid: {p: 1.0, i: 0.01, d: 1.0}
+    pid: {p: 300.0, i: 0.01, d: 1.0}
 
   joint8_position_controller:
     type: effort_controllers/JointPositionController
     joint: r_shoulder_roll
-    pid: {p: 1.0, i: 0.01, d: 1.0}
+    pid: {p: 100.0, i: 0.01, d: 1.0}
   
   joint9_position_controller:
     type: effort_controllers/JointPositionController
     joint: r_shoulder_pitch
-    pid: {p: 1.0, i: 0.01, d: 1.0}
+    pid: {p: 100.0, i: 0.01, d: 1.0}
 
   joint10_position_controller:
     type: effort_controllers/JointPositionController
@@ -73,4 +73,4 @@ lita:
   joint14_position_controller:
     type: effort_controllers/JointPositionController
     joint: r_wrist_yaw
-    pid: {p: 1.0, i: 0.01, d: 1.0}
+    pid: {p: 300.0, i: 0.01, d: 1.0}

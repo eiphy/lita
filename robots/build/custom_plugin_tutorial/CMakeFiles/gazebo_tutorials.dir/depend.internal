@@ -114,21 +114,21 @@ custom_plugin_tutorial/CMakeFiles/gazebo_tutorials.dir/src/simple_world_plugin.c
  /usr/include/ignition/math4/ignition/math/graph/Graph.hh
  /usr/include/ignition/math4/ignition/math/graph/GraphAlgorithms.hh
  /usr/include/ignition/math4/ignition/math/graph/Vertex.hh
- /usr/include/sdformat-6.2/sdf/Assert.hh
- /usr/include/sdformat-6.2/sdf/Console.hh
- /usr/include/sdformat-6.2/sdf/Element.hh
- /usr/include/sdformat-6.2/sdf/Error.hh
- /usr/include/sdformat-6.2/sdf/Exception.hh
- /usr/include/sdformat-6.2/sdf/Filesystem.hh
- /usr/include/sdformat-6.2/sdf/Param.hh
- /usr/include/sdformat-6.2/sdf/Root.hh
- /usr/include/sdformat-6.2/sdf/SDFImpl.hh
- /usr/include/sdformat-6.2/sdf/Types.hh
- /usr/include/sdformat-6.2/sdf/World.hh
- /usr/include/sdformat-6.2/sdf/parser.hh
- /usr/include/sdformat-6.2/sdf/sdf.hh
- /usr/include/sdformat-6.2/sdf/sdf_config.h
- /usr/include/sdformat-6.2/sdf/system_util.hh
+ /usr/include/sdformat-6.0/sdf/Assert.hh
+ /usr/include/sdformat-6.0/sdf/Console.hh
+ /usr/include/sdformat-6.0/sdf/Element.hh
+ /usr/include/sdformat-6.0/sdf/Error.hh
+ /usr/include/sdformat-6.0/sdf/Exception.hh
+ /usr/include/sdformat-6.0/sdf/Filesystem.hh
+ /usr/include/sdformat-6.0/sdf/Param.hh
+ /usr/include/sdformat-6.0/sdf/Root.hh
+ /usr/include/sdformat-6.0/sdf/SDFImpl.hh
+ /usr/include/sdformat-6.0/sdf/Types.hh
+ /usr/include/sdformat-6.0/sdf/World.hh
+ /usr/include/sdformat-6.0/sdf/parser.hh
+ /usr/include/sdformat-6.0/sdf/sdf.hh
+ /usr/include/sdformat-6.0/sdf/sdf_config.h
+ /usr/include/sdformat-6.0/sdf/system_util.hh
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h
  /usr/include/x86_64-linux-gnu/bits/select.h
