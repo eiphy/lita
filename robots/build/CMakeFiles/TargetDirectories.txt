@@ -35,7 +35,6 @@
 /home/ei/engine/lita/robots/build/gtest/googlemock/gtest/CMakeFiles/list_install_components.dir
 /home/ei/engine/lita/robots/build/gtest/googlemock/gtest/CMakeFiles/gtest.dir
 /home/ei/engine/lita/robots/build/gtest/googlemock/gtest/CMakeFiles/rebuild_cache.dir
-<<<<<<< HEAD
 /home/ei/engine/lita/robots/build/rrbot_control/CMakeFiles/install/strip.dir
 /home/ei/engine/lita/robots/build/rrbot_control/CMakeFiles/install/local.dir
 /home/ei/engine/lita/robots/build/rrbot_control/CMakeFiles/test.dir
@@ -133,13 +132,10 @@
 /home/ei/engine/lita/robots/build/custom_plugin_tutorial/CMakeFiles/sensor_msgs_generate_messages_lisp.dir
 /home/ei/engine/lita/robots/build/custom_plugin_tutorial/CMakeFiles/tf_generate_messages_py.dir
 /home/ei/engine/lita/robots/build/custom_plugin_tutorial/CMakeFiles/sensor_msgs_generate_messages_py.dir
-=======
->>>>>>> master
 /home/ei/engine/lita/robots/build/upper_14/CMakeFiles/install/strip.dir
-/home/ei/engine/lita/robots/build/upper_14/CMakeFiles/install/local.dir
-/home/ei/engine/lita/robots/build/upper_14/CMakeFiles/test.dir
-/home/ei/engine/lita/robots/build/upper_14/CMakeFiles/list_install_components.dir
 /home/ei/engine/lita/robots/build/upper_14/CMakeFiles/edit_cache.dir
-/home/ei/engine/lita/robots/build/upper_14/CMakeFiles/_catkin_empty_exported_target.dir
+/home/ei/engine/lita/robots/build/upper_14/CMakeFiles/list_install_components.dir
+/home/ei/engine/lita/robots/build/upper_14/CMakeFiles/test.dir
+/home/ei/engine/lita/robots/build/upper_14/CMakeFiles/install/local.dir
 /home/ei/engine/lita/robots/build/upper_14/CMakeFiles/rebuild_cache.dir
 /home/ei/engine/lita/robots/build/upper_14/CMakeFiles/install.dir

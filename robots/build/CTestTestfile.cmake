@@ -5,11 +5,8 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
-<<<<<<< HEAD
 subdirs("rrbot_control")
 subdirs("rrbot_description")
 subdirs("rrbot_gazebo")
 subdirs("custom_plugin_tutorial")
-=======
->>>>>>> master
 subdirs("upper_14")

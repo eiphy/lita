@@ -17,13 +17,16 @@
     args="-urdf -model lita -param robot_description"/>
 
   <!-- Load joint controller configurations from YAML file to parameter server -->
-  <!-- <rosparam file="$(find upper_14)/config/upper_14_controller.yaml" command="load"/> -->
+  <rosparam file="$(find upper_14)/config/upper_14_controller.yaml" command="load"/>
 
   <!-- Load the controller -->
-  <!-- <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
   output="screen" ns="lita" args="joint_state_controller
-                joint1_position_controller
-                joint2_position_controller
+                joint1_position_controller"/>
+
+</launch>
+
+<!-- joint2_position_controller
                 joint3_position_controller
                 joint4_position_controller
                 joint5_position_controller
@@ -34,6 +37,4 @@
                 joint10_position_controller
                 joint12_position_controller
                 joint13_position_controller
-                joint14_position_controller"/> -->
-
-</launch>
+                joint14_position_controller -->

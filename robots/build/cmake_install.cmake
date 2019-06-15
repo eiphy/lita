@@ -131,13 +131,10 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/ei/engine/lita/robots/build/gtest/cmake_install.cmake")
-<<<<<<< HEAD
   include("/home/ei/engine/lita/robots/build/rrbot_control/cmake_install.cmake")
   include("/home/ei/engine/lita/robots/build/rrbot_description/cmake_install.cmake")
   include("/home/ei/engine/lita/robots/build/rrbot_gazebo/cmake_install.cmake")
   include("/home/ei/engine/lita/robots/build/custom_plugin_tutorial/cmake_install.cmake")
-=======
->>>>>>> master
   include("/home/ei/engine/lita/robots/build/upper_14/cmake_install.cmake")
 
 endif()

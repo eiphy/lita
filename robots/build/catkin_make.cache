@@ -1,6 +1,2 @@
-<<<<<<< HEAD
 custom_plugin_tutorial:rrbot_control:rrbot_description:rrbot_gazebo:upper_14
-=======
-upper_14
->>>>>>> master
 -DCATKIN_DEVEL_PREFIX=/home/ei/engine/lita/robots/devel -DCMAKE_INSTALL_PREFIX=/home/ei/engine/lita/robots/install -G Unix Makefiles
