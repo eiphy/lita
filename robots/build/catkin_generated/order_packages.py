@@ -2,4 +2,4 @@
 source_root_dir = "/home/ei/engine/lita/robots/src"
 whitelisted_packages = "".split(';') if "" != "" else []
 blacklisted_packages = "".split(';') if "" != "" else []
-underlay_workspaces = "/opt/ros/melodic".split(';') if "/opt/ros/melodic" != "" else []
+underlay_workspaces = "/home/ei/engine/lita/robots/devel;/opt/ros/melodic".split(';') if "/home/ei/engine/lita/robots/devel;/opt/ros/melodic" != "" else []
