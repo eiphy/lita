@@ -1,0 +1,8 @@
+prefix=/home/ei/engine/lita/robots/install
+
+Name: gazebo_tutorials
+Description: Description of gazebo_tutorials
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/ei/engine/lita/robots/install/lib -lgazebo_tutorials
+Requires: roscpp gazebo_ros

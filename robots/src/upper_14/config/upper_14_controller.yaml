@@ -1,4 +1,7 @@
+<<<<<<< HEAD
+=======
 controller_joint_names: ['l_shoulder_roll', 'l_shoulder_pitch', 'l_shoulder_yaw', 'l_elbow', 'l_wrist_roll', 'l_wrist_pitch', 'l_wrist_yaw', 'r_shoulder_roll', 'r_shoulder_pitch', 'r_shoulder_yaw', 'r_elbow', 'r_wrist_roll', 'r_wrist_pitch', 'r_wrist_yaw', ]
+>>>>>>> master
 lita:
   # Publish all joint states
   joint_state_controller:
@@ -8,9 +11,77 @@ lita:
   joint1_position_controller:
     type: effort_controllers/JointPositionController
     joint: l_shoulder_roll
+<<<<<<< HEAD
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+=======
     pid: {p:100.0, i: 0.01, d: 10.0}
+>>>>>>> master
   
   joint2_position_controller:
     type: effort_controllers/JointPositionController
     joint: l_shoulder_pitch
+<<<<<<< HEAD
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  joint3_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: l_shoulder_yaw
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  joint4_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: l_elbow
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  joint5_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: l_wrist_roll
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  joint6_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: l_wrist_pitch
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  joint7_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: l_wrist_yaw
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  joint8_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: r_shoulder_roll
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  
+  joint9_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: r_shoulder_pitch
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  joint10_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: r_shoulder_yaw
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  joint11_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: r_elbow
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  joint12_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: r_wrist_roll
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  joint13_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: r_wrist_pitch
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  joint14_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: r_wrist_yaw
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+=======
     pid: {p:100.0, i: 0.01, d: 10.0}
+>>>>>>> master

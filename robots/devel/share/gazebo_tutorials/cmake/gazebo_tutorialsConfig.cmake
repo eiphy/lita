@@ -67,7 +67,7 @@ set(gazebo_tutorials_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(gazebo_tutorials_SOURCE_PREFIX /home/ei/engine/lita/robots/src/gazebo_ros_demos/custom_plugin_tutorial)
+  set(gazebo_tutorials_SOURCE_PREFIX /home/ei/engine/lita/robots/src/custom_plugin_tutorial)
   set(gazebo_tutorials_DEVEL_PREFIX /home/ei/engine/lita/robots/devel)
   set(gazebo_tutorials_INSTALL_PREFIX "")
   set(gazebo_tutorials_PREFIX ${gazebo_tutorials_DEVEL_PREFIX})
@@ -110,7 +110,7 @@ if(NOT " " STREQUAL " ")
         message(FATAL_ERROR "Project 'gazebo_tutorials' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'gazebo_tutorials' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/ei/engine/lita/robots/src/gazebo_ros_demos/custom_plugin_tutorial/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'gazebo_tutorials' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/ei/engine/lita/robots/src/custom_plugin_tutorial/${idir}'.  ${_report}")
     endif()
     _list_append_unique(gazebo_tutorials_INCLUDE_DIRS ${include})
   endforeach()
@@ -131,7 +131,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/ei/engine/lita/robots/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/ei/engine/lita/robots/devel/lib;/home/ei/engine/lita/robots/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
